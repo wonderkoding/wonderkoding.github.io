@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="shopee:git-sha" content="54595c8438f594ba2a138139335715fcd51a77a4">
+  <meta name="shopee:version" content="pc-v4.23.1">
+  <script>
+    window.__LOCALE__ = 'ID';
+    window.__ENV__ = 'live';
+    window.__ASSETS__ = {"SPECIAL_SHOP":{"data":[{"username":"mkt.test123","shopid":188393404},{"username":"samsungelectronicofficial","shopid":56559885},{"username":"smart_byshopee","shopid":65323877},{"username":"rayban.id","shopid":56663124},{"username":"oakley.id","shopid":56662705},{"username":"childhoodfashion.id","shopid":117234807},{"username":"couragelife.id","shopid":78540805},{"username":"bigstar.id","shopid":63652773},{"username":"tokogrosirmurah.id","shopid":27013201},{"username":"rungaroun.id","shopid":104531743},{"username":"skmei.id","shopid":96884261},{"username":"skmeiwatches.id","shopid":83591898},{"username":"jiuerba.id","shopid":47678487},{"username":"jiuerbaofficial.id","shopid":118977455},{"username":"hh_permata.id","shopid":87224243},{"username":"heheng.id","shopid":29463238},{"username":"teamor521.id","shopid":88057982},{"username":"teamor520.id","shopid":42134304},{"username":"mashala","shopid":40462994},{"username":"ougeya.id","shopid":8768318},{"username":"ligeflagshipstore.id","shopid":141794419},{"username":"ligewatch.id","shopid":118069580},{"username":"saswatch.id","shopid":141796755},{"username":"sas.id","shopid":96570740},{"username":"ym003_mall.id","shopid":95540047},{"username":"ym003mall.id","shopid":153280201},{"username":"fanxi.id","shopid":137322294},{"username":"boneid3.id","shopid":165640994},{"username":"imyqueen.id","shopid":166832572},{"username":"iqueen.id","shopid":135305236},{"username":"samsung.official","shopid":52635036},{"username":"lqoo.id","shopid":143564292},{"username":"tiki.id","shopid":139175961},{"username":"happy_bulutangkise.id","shopid":174816438},{"username":"sihappy.id","shopid":127688121}]},"TRANSIFY_MAPPING":{"id-live":1576222859,"ms-my-live":1576222847,"pt-br-live":1576744150,"vi-live":1576222842,"en-live":1576636126,"zh-hans-live":1576222853,"zh-hant-live":1576222850,"th-live":1576837479}};
+  </script>
+
+  <script>function showBody(){document&&document.body&&(document.body.style.visibility="visible")}var SHORT_URL_MAX_LENGTH=256,pathname=location&&location.pathname;if("/"!==pathname&&pathname.length<SHORT_URL_MAX_LENGTH&&""===location.hash&&-1===pathname.indexOf("-")&&0===pathname.lastIndexOf("/")){document&&document.body&&(document.body.style.visibility="hidden"),setTimeout(showBody,5e3);var xhr=new XMLHttpRequest;xhr.open("GET","/api/v0/is_short_url/?path="+pathname.replace("/","")),xhr.setRequestHeader("Content-Type","application/json"),xhr.setRequestHeader("Accept","application/json"),xhr.onreadystatechange=function(){if(4===this.readyState)if(200===this.status)if(JSON.parse(this.responseText).error)showBody();else{var e=document.createElement("a");e.href=location.href,e.search+="?"===e.search[0]?"&__classic__=1":"?__classic__=1",location.href=e.href}else showBody()},xhr.send()}</script>
+  <script>if(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,window.PerformanceObserver){var observer=new window.PerformanceObserver(function(e){for(var r=e.getEntries(),n=0;n<r.length;n++){var a=r[n],i=a.name,t=Math.round(a.startTime+a.duration);ga("send",{hitType:"timing",timingCategory:"Performance Metrics",timingVar:i,timingValue:t})}});observer.observe({entryTypes:["paint"]})}</script>
+  <script>window.prometheusGetChunks=function(){return window.webpackJsonp};</script>
+  <!-- Open search -->
+  
+    <link type="application/opensearchdescription+xml" rel="search" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/089fc6520dfc97821a569c878294b4be.xml" />
+  
+  
+  
+  
+  
+  
+  
+  
+    <link
+      rel="dns-prefetch"
+      href="//cf.shopee.co.id/"
+    />
+  
+    <link
+      rel="dns-prefetch"
+      href="//deo.shopeemobile.com/shopee/"
+    />
+  
+    <link
+      rel="dns-prefetch"
+      href="//cv.shopee.co.id/"
+    />
+  
+  <script>dataLayer = [];</script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js', country: 'id'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WJZQSJF');</script>
+
+  
+  <script>!function(c,f){if(self&&performance){var t,o,i,e=[],r={passive:!0,capture:!0},n=new Date,a="pointerup",u="pointercancel";m(c),self.perfMetrics=self.perfMetrics||{},self.perfMetrics.onFirstInputDelay=function(n){e.push(n),s()}}function p(n,e){t||(t=e,o=n,i=new Date,m(f),s())}function s(){0<=o&&o<i-n&&(e.forEach(function(n){n(o,t)}),e=[])}function l(n){if(n.cancelable){var e=(1e12<n.timeStamp?new Date:performance.now())-n.timeStamp;"pointerdown"===n.type?function(n,e){function t(){p(n,e),i()}function o(){i()}function i(){f(a,t,r),f(u,o,r)}c(a,t,r),c(u,o,r)}(e,n):p(e,n)}}function m(e){["click","mousedown","keydown","touchstart","pointerdown"].forEach(function(n){e(n,l,r)})}}(addEventListener,removeEventListener);</script>
+  <script>function shopeeInitFirebase(e){var n=document.createElement("script"),a=!1,i=!1;n.async=1,n.src="https://www.gstatic.com/firebasejs/6.5.0/firebase-performance-standalone.js";var t=document.getElementsByTagName("script")[0];function r(){a&&i&&window.firebase&&(window._globalFirebasePerformanceEntry=window.firebase.initializeApp(e).performance())}t.parentNode.insertBefore(n,t),window.addEventListener("load",function(){i=!0,r()}),n.onload=function(){a=!0,r()}}</script>
+  <script>
+    shopeeInitFirebase({"appId":"1:808332928752:web:7a8fed3902ac939f","apiKey":"AIzaSyCZnRmQRNJOw3NFAfJsyKixBYoN61P1MYQ","authDomain":"shopee-ad86f.firebaseapp.com","databaseURL":"https://shopee-ad86f.firebaseio.com","projectId":"shopee-ad86f","storageBucket":"shopee-ad86f.appspot.com","messagingSenderId":"808332928752"});
+  </script>
+  
+ 
+<link href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/bundle.8f18ed4853c083748e59.css" rel="stylesheet"></head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJZQSJF" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <div id="main"></div>
+  <div id="modal"></div>
+<script type="text/javascript" src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/modules~bundle.247ef34d8b368eb0f957.js"></script><script type="text/javascript" src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/bundle.a0d8aff43c37f661bb79.js"></script></body>
+</html>

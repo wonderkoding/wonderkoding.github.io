@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"4d6468f087",applicationID:"398320207"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1158.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<title>REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - JakartaNotebook.com</title>
+<meta name="description" content="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 termurah. Dapatkan dengan mudah REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 murah, garansi, dan bisa cicilan - Hanya di JakartaNotebook.com." />
+<meta name="keywords" content="jakarta notebook, jakarta, notebook,e-commerce, commerce, toko retail, toko, retail, toko online, online, toko lengkap, lengkap, pick up in store, Pick &amp; Go, belanja mudah, harga terjangkau, murah, unik, termurah,terlengkap, lengkap, unik, indonesia,harga murah,memory,ssd, ikat pinggang anti xray, timbangan badan, digital, rumah tangga, alat masak, fashion, beauty, make up, tas, dompet, online shop, online, traveling,perlengkapan, pancing,olahraga, kesehatan, kendaraan" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="-dTpXfY-AtmiEf9QaL4-OCDFzW_HVci4WwCISyexSg0" />
+<meta name="google-site-verification" content="mEMpjyj2Zmfk2OHUw3k3GOfTS1eMLZ4wVSNNB97soh0" />
+<meta property="og:site_name" content="JakartaNotebook" />
+<meta property="og:title" content="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - JakartaNotebook.com" />
+<meta property="og:description" content="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 termurah. Dapatkan dengan mudah REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 murah, garansi, dan bisa cicilan - Hanya di JakartaNotebook.com." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//www.jakartanotebook.com/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange" />
+<meta property="og:image" content="https://www.jakartanotebook.com/images/products/80/868/36146/10/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-1.jpg" />
+<meta property="og:image" content="https://www.jakartanotebook.com/images/products/80/868/36146/10/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-2.jpg" />
+<meta property="og:image" content="https://www.jakartanotebook.com/images/products/80/868/36146/10/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-3.jpg" />
+<meta property="og:image" content="https://www.jakartanotebook.com/images/products/80/868/36146/10/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-4.jpg" />
+<meta property="og:image" content="https://www.jakartanotebook.com/images/products/80/868/36146/10/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-5.jpg" />
+
+<meta property="fb:admins" content="728132010" />
+<link type="text/css" rel="stylesheet" href="https://www.jakartanotebook.com/css/all.css?20191218" />
+<link type="text/css" rel="stylesheet" href="https://www.jakartanotebook.com/css/vendor/home-countdown.css?4" />
+<script src="https://www.jakartanotebook.com/js/all-min.js?232"></script>
+<script src="https://www.jakartanotebook.com/js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript">
+            var base_url = 'https://www.jakartanotebook.com/';
+
+            
+            $(function(){
+                // go to next field setelah klik
+                $('.go-to-next').change(function(){
+                    var tabindex = parseInt($(this).attr('tabindex')) + 1;
+                    console.log(tabindex);
+                    $('[tabindex='+tabindex+']').focus();
+                });
+
+                $(".select--custom").selecter({
+                    cover: true
+                });
+
+                // branch container
+                // TO DO: move to after content
+                $('#footer_branch').change(function(e) {
+                    $('.footer__address').find('p').hide();
+                    $('#branch-container-' + $(this).val()).show();
+                });
+
+                $('.popup--image').magnificPopup({
+                    type: 'image',
+                    closeOnContentClick: true,
+                    closeBtnInside: false,
+                    fixedContentPos: true,
+                    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+                    image: {
+                        verticalFit: true
+                    },
+                    zoom: {
+                        enabled: true,
+                        duration: 300 // don't foget to change the duration also in CSS
+                    }
+                });
+
+                // wishlist slider
+                $('.wl__review__content').bxSlider({
+                    pagerCustom: $('.wl__review__pager'),
+                    nextSelector: $('.wl__review--next'),
+                    prevSelector: $('.wl__review--prev'),
+                    nextText: '',
+                    prevText: '',
+                    adaptiveHeight: true
+                });
+
+                $(":input").inputmask();
+            })
+
+            // scripts only on mobile
+            yepnope({
+                test : Modernizr.mq('only all and (max-width: 599px)'),
+                yep  : [base_url + "js/main-320.js?3"]
+            });
+            // scripts only on tablet
+            yepnope({
+                test : Modernizr.mq('only all and (min-width: 600px) and (max-width: 1199px)'),
+                yep  : [base_url + "js/main-720.js?3"]
+            });
+            // scripts only on desktop
+            yepnope({
+                test : Modernizr.mq('only all and (min-width: 1200px)'),
+                yep  : [base_url + "js/vendor/stickyheader.js?2",
+                        base_url + "js/vendor/scrollReveal.js?2",
+                        base_url + "js/main-1280.js?3"]
+            });
+
+            function dismissLastTrans() {
+                $.removeCookie('last_transaction_invoice_code');
+                $('#last_transaction_container').attr('class', 'fixed__into fixed__info');
+                return false;
+            }
+        </script>
+<script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+         fbq('init', '657292504435370'); 
+        fbq('track', 'PageView');
+        </script>
+<noscript>
+         <img height="1" width="1" 
+        src="https://www.facebook.com/tr?id=657292504435370&ev=PageView
+        &noscript=1"/>
+        </noscript>
+</head>
+<body class="page-body">
+<script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "url": "http://www.jakartanotebook.com/",
+          "logo": "http://www.jakartanotebook.com/images/new/logo.png",
+          "contactPoint" : [
+            { "@type" : "ContactPoint",
+              "telephone" : "+62-21-5698-5511",
+              "contactType" : "sales",
+              "areaServed" : "ID"
+            } ] },
+            "sameAs" : [ "https://www.facebook.com/jakartanotebook",
+            "https://www.twitter.com/jakartanotebook",
+            "https://plus.google.com/+jakartanotebook",
+            "https://instagram.com/jakartanotebook"]
+        }
+        </script>
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+<div id="fb-root"></div>
+
+<div class="header__pre">
+<div class="container">
+<ul class="header__pre--left">
+<li data-position="bottom" data-theme="white" data-close_on_outside_click="true" data-singleton="" data-trigger="click" data-toggle="tooltip" data-backdrop="black" data-title="<div class='header__branch__dropdown'><span data-branchid='lejRej' onclick='JTippyTrigger.setDropdownSelectBranch(this)' class='header__branch__dd__item header__branch__dd__item--selected'>Jakarta</span><span data-branchid='nel5aK' onclick='JTippyTrigger.setDropdownSelectBranch(this)' class='header__branch__dd__item'>Semarang</span><span data-branchid='penRe7' onclick='JTippyTrigger.setDropdownSelectBranch(this)' class='header__branch__dd__item'>Surabaya Timur</span><span data-branchid='zbq2dp' onclick='JTippyTrigger.setDropdownSelectBranch(this)' class='header__branch__dd__item'>Surabaya Barat</span><span data-branchid='xbojag' onclick='JTippyTrigger.setDropdownSelectBranch(this)' class='header__branch__dd__item'>Bandung</span><span data-branchid='mep2bM' onclick='JTippyTrigger.setDropdownSelectBranch(this)' class='header__branch__dd__item'>Tangerang</span><span data-branchid='YerEdO' onclick='JTippyTrigger.setDropdownSelectBranch(this)' class='header__branch__dd__item'>Medan</span></div>" id="select-branch-dropdown" class="select__branch__dd__trigger select__branch__dd__trigger--selectable">
+<span>
+<i class="fa fa-map-marker"></i>
+<span class="header__branch__dd__displayed">Jakarta</span>
+<i class="fa fa-chevron-down"></i>
+</span>
+</li>
+<li class="mobile--hide">
+<i class="fa fa-phone"></i><span>(021) 5698 5511</span>
+</li>
+<li class="mobile--hide">
+<i class="fa fa-clock-o"></i><span> Mon-Sat (09:00-20:00), Sun (13:00-20:00), Open on Holiday</span>
+</li>
+<li class="mobile--hide">
+<i class="fa fa-envelope"></i><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f88b99949d8bb8">[email&#160;protected]</a><span itemprop="name">jakartanotebook.com</span></span>
+</li>
+</ul>
+<ul class="header__pre--mid tablet--hide">
+<li><a class="mobile--hide" href="https://www.jakartanotebook.com/help/transaction?utm_source=home&utm_medium=top-link&utm_content=howtobuy" title="Learn How to Buy here">How to Buy</a></li>
+<li><a class="mobile--hide" href="https://www.jakartanotebook.com/tracking?utm_source=home&utm_medium=top-link&utm_content=ordertracking" title="Track your Recent Order">Order Tracking</a></li>
+<li><a class="mobile--hide" href="https://www.jakartanotebook.com/service-center?utm_source=home&utm_medium=top-link&utm_content=servicecenter">Service Center</a></li>
+</ul>
+</div>
+</div>
+<header>
+<div class="container">
+<div class="menu--open desktop--hide">
+<a href="#menu--main" class="header__link"><i class="fa fa-navicon"></i></a></div>
+<div class="logo">
+<a href="https://www.jakartanotebook.com/"><img itemprop="image" src="https://www.jakartanotebook.com/images/new/logo.png?2" alt="JakartaNotebook.com" /></a>
+</div>
+<div class="header--mid">
+<form action="https://www.jakartanotebook.com/search" id="form-keyword-search" method="get">
+<select name="category" class="mobile--hide tablet--hide">
+<option value="0">All Category</option>
+<option value="2">PC & Laptop</option>
+<option value="70">Battery</option>
+<option value="3">Smartphone & Tablet</option>
+<option value="384">Electronic</option>
+<option value="232">Home Appliance</option>
+<option value="5">Photography</option>
+<option value="325">Fashion, Make Up & Beauty Care</option>
+<option value="266">Toys, Kids & Baby</option>
+<option value="8">Hobby</option>
+<option value="10">Sport & Outdoor</option>
+</select>
+<input class="input" type="search" placeholder="Cari nama atau kode SKU produk lalu tekan enter" name="key" id="keyword-search" value="" />
+<button type="submit" class="button mobile--hide tablet--hide"><i class="fa fa-search"></i></button>
+</form>
+<div class="header__search__popular desktop__hide mobile--hide tablet--hide">
+<span onclick="amplitude.getInstance().logEvent('header__search__popular');">Pencarian Terpopuler</span>
+<a href="https://www.jakartanotebook.com/search?key=tas">Tas</a>
+<a href="https://www.jakartanotebook.com/search?key=earphone">Earphone</a>
+<a href="https://www.jakartanotebook.com/search?key=senter">Senter</a>
+<a href="https://www.jakartanotebook.com/search?key=jam+tangan">Jam Tangan</a>
+<a href="https://www.jakartanotebook.com/search?key=headset">Headset</a>
+<a href="https://www.jakartanotebook.com/search?key=onetwocups">Onetwocups</a>
+<a href="https://www.jakartanotebook.com/search?key=humidifier">Humidifier</a>
+<a href="https://www.jakartanotebook.com/tag" class="header__tag__link">koleksi</a>
+</div>
+</div>
+<div class="header--right">
+<a href="https://www.jakartanotebook.com/transaction/cart" class="header__link" title="My Shopping Cart"><i class="fa fa-shopping-cart"></i><span class="mobile--hide">My Cart <b>(0)</b></span></a>
+<a href="https://www.jakartanotebook.com/member/?_r=regail-raket-badminton-carbon-fiber-2-pcs-8019-orange" class="header__link" title="Login / Register"><i class="fa fa-user"></i><span class="mobile--hide">Login / Register</span></a>
+</div>
+</div>
+</header>
+<nav class="menu--main" id="menu--main">
+<ul class="menu--top">
+<li>
+<a href="https://www.jakartanotebook.com/pc-and-laptop">PC & Laptop</a>
+<div class="menu--sub__wrapper" data-sub="pc & laptop">
+<ul class="menu--sub container">
+<li>
+<a href="https://www.jakartanotebook.com/laptop-or-notebook">Laptop / Notebook</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/pc-and-server">PC & Server</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/mini-pc">Mini PC</a></li>
+<li><a href="https://www.jakartanotebook.com/workstation-and-server">Workstation & Server</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/komponen-komputer">Komponen Komputer</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/ram-komputer">RAM Komputer</a></li>
+<li><a href="https://www.jakartanotebook.com/hdd-or-ssd-internal">HDD / SSD Internal</a></li>
+<li><a href="https://www.jakartanotebook.com/heatsink-and-fan">Heatsink & Fan</a></li>
+<li><a href="https://www.jakartanotebook.com/power-supply">Power Supply</a></li>
+ <li><a href="https://www.jakartanotebook.com/sound-card">Sound Card</a></li>
+<li><a href="https://www.jakartanotebook.com/optical-drive">Optical Drive</a></li>
+<li><a href="https://www.jakartanotebook.com/interface-and-kartu-add-on-komputer">Interface & Kartu Add-On Komputer</a></li>
+<li><a href="https://www.jakartanotebook.com/komponen-komputer-lainnya">Komponen Komputer Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/spare-part-laptop">Spare Part Laptop</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/baterai-laptop">Baterai Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/keyboard-laptop">Keyboard Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/charger-laptop">Charger Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/heatsink-laptop">Heatsink Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/lcd-laptop">LCD Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/engsel-laptop">Engsel Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/ram-laptop">RAM Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/interface-and-kartu-add-on-laptop">Interface & Kartu Add-On Laptop</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/komputer-mini-diy-and-pcb-diy">Komputer Mini DIY & PCB DIY</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/motherboard-mini">Motherboard Mini</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-komputer-mini-diy">Aksesoris Komputer Mini DIY</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/aksesoris-komputer-and-laptop">Aksesoris Komputer & Laptop</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/keyboard">Keyboard</a></li>
+<li><a href="https://www.jakartanotebook.com/mouse">Mouse</a></li>
+ <li><a href="https://www.jakartanotebook.com/mouse-pad">Mouse Pad</a></li>
+<li><a href="https://www.jakartanotebook.com/monitor">Monitor</a></li>
+<li><a href="https://www.jakartanotebook.com/cooling-pad-and-stand-laptop">Cooling Pad & Stand Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/pelindung-layar-laptop">Pelindung Layar Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/security-lock-laptop">Security Lock Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/stiker-laptop">Stiker Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/casing-laptop">Casing Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/pembersih-laptop-or-komputer">Pembersih Laptop / Komputer</a></li>
+<li><a href="https://www.jakartanotebook.com/digital-graphic-tablet">Digital Graphic Tablet</a></li>
+<li><a href="https://www.jakartanotebook.com/webcam">Webcam</a></li>
+<li><a href="https://www.jakartanotebook.com/joystick-and-gamepad">Joystick & Gamepad</a></li>
+<li><a href="https://www.jakartanotebook.com/barcode-scanner">Barcode Scanner</a></li>
+<li><a href="https://www.jakartanotebook.com/ups">UPS</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/notebook-bag-and-case">Notebook Bag & Case</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/tas-ransel-laptop">Tas Ransel Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/tas-selempang-laptop">Tas Selempang Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/tas-jinjing-laptop">Tas Jinjing Laptop</a></li>
+<li><a href="https://www.jakartanotebook.com/sarung-laptop">Sarung Laptop</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/aksesoris-usb">Aksesoris USB</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/usb-hub">USB Hub</a></li>
+<li><a href="https://www.jakartanotebook.com/usb-lamp">USB Lamp</a></li>
+ <li><a href="https://www.jakartanotebook.com/kipas-usb">Kipas USB</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/kabel-komputer-or-laptop">Kabel Komputer / Laptop</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/kabel-audio">Kabel Audio</a></li>
+<li><a href="https://www.jakartanotebook.com/kabel-video">Kabel Video</a></li>
+<li><a href="https://www.jakartanotebook.com/kabel-power">Kabel Power</a></li>
+<li><a href="https://www.jakartanotebook.com/kabel-jaringan">Kabel Jaringan</a></li>
+<li><a href="https://www.jakartanotebook.com/usb-cable">USB Cable</a></li>
+<li><a href="https://www.jakartanotebook.com/adapter-konverter">Adapter Konverter</a></li>
+<li><a href="https://www.jakartanotebook.com/manajemen-kabel-or-cord-holder">Manajemen Kabel / Cord Holder</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/printer-scanner-and-aksesoris">Printer, Scanner & Aksesoris</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/printer-standar">Printer Standar</a></li>
+<li><a href="https://www.jakartanotebook.com/printer-3d">Printer 3D</a></li>
+<li><a href="https://www.jakartanotebook.com/pos-printer-or-label-printer">POS Printer / Label Printer</a></li>
+<li><a href="https://www.jakartanotebook.com/scanner">Scanner</a></li>
+<li><a href="https://www.jakartanotebook.com/tinta-printer">Tinta Printer</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-printer">Aksesoris Printer</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/proyektor-and-laser-presenter">Proyektor & Laser Presenter</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/projector">Projector</a></li>
+<li><a href="https://www.jakartanotebook.com/proyektor-mini">Proyektor Mini</a></li>
+<li><a href="https://www.jakartanotebook.com/laser-presenter">Laser Presenter</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/storage-eksternal">Storage Eksternal</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/hdd-or-ssd-eksternal">HDD / SSD Eksternal</a></li>
+<li><a href="https://www.jakartanotebook.com/sd-card">SD Card</a></li>
+<li><a href="https://www.jakartanotebook.com/memory-card">Memory Card</a></li>
+<li><a href="https://www.jakartanotebook.com/compact-flash">Compact Flash</a></li>
+<li><a href="https://www.jakartanotebook.com/memory-stick-duo">Memory Stick Duo</a></li>
+<li><a href="https://www.jakartanotebook.com/card-reader">Card Reader</a></li>
+<li><a href="https://www.jakartanotebook.com/usb-flashdisk">USB Flashdisk</a></li>
+<li><a href="https://www.jakartanotebook.com/harddisk-case">Harddisk Case</a></li>
+<li><a href="https://www.jakartanotebook.com/cd-or-dvd-or-blu-ray-kosong">CD / DVD / Blu-Ray Kosong</a></li>
+<li><a href="https://www.jakartanotebook.com/penyimpanan-server">Penyimpanan Server</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-penyimpanan-data-eksternal">Aksesoris Penyimpanan Data Eksternal</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/komponen-jaringan-and-wireless">Komponen Jaringan & Wireless</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/router-wifi">Router WiFi</a></li>
+<li><a href="https://www.jakartanotebook.com/modem-usb">Modem USB</a></li>
+<li><a href="https://www.jakartanotebook.com/modem-mifi">Modem MiFi</a></li>
+<li><a href="https://www.jakartanotebook.com/switch-and-hub">Switch & Hub</a></li>
+<li><a href="https://www.jakartanotebook.com/wifi-range-extender-and-signal-booster">WiFi Range Extender & Signal Booster</a></li>
+<li><a href="https://www.jakartanotebook.com/kartu-jaringan">Kartu Jaringan</a></li>
+<li><a href="https://www.jakartanotebook.com/usb-wireless-receiver">USB Wireless Receiver</a></li>
+ <li><a href="https://www.jakartanotebook.com/lan-adapter">LAN Adapter</a></li>
+<li><a href="https://www.jakartanotebook.com/plug-kabel-jaringan">Plug Kabel Jaringan</a></li>
+<li><a href="https://www.jakartanotebook.com/spare-part-router-and-modem">Spare Part Router & Modem</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-and-peralatan-jaringan">Aksesoris & Peralatan Jaringan</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/software">Software</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/pc-gaming">PC Gaming</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/keyboard-gaming">Keyboard Gaming</a></li>
+<li><a href="https://www.jakartanotebook.com/mouse-gaming">Mouse Gaming</a></li>
+<li><a href="https://www.jakartanotebook.com/mousepad-gaming">Mousepad Gaming</a></li>
+<li><a href="https://www.jakartanotebook.com/headphone-gaming">Headphone Gaming</a></li>
+</ul>
+</li>
+</ul>
+<a class="menu--sub__banner"></a>
+</div>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/smartphone-and-tablet">Smartphone & Tablet</a>
+<div class="menu--sub__wrapper" data-sub="smartphone & tablet">
+<ul class="menu--sub container">
+<li>
+<a href="https://www.jakartanotebook.com/smartphone">Smartphone</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/tablet-pc">Tablet PC</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/handphone">Handphone</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/aksesoris-smartphone">Aksesoris Smartphone</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/smartphone-casing">Smartphone Casing</a></li>
+<li><a href="https://www.jakartanotebook.com/smartphone-stand-and-holder">Smartphone Stand & Holder</a></li>
+<li><a href="https://www.jakartanotebook.com/smartphone-screen-protector">Smartphone Screen Protector</a></li>
+<li><a href="https://www.jakartanotebook.com/waterproof-case-and-bag">Waterproof Case & Bag</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-kamera-smartphone">Aksesoris Kamera Smartphone</a></li>
+<li><a href="https://www.jakartanotebook.com/pernak-pernik-smartphone">Pernak Pernik Smartphone</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/aksesoris-tablet">Aksesoris Tablet</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/tablet-case-and-bag">Tablet Case & Bag</a></li>
+<li><a href="https://www.jakartanotebook.com/tablet-stand-and-holder">Tablet Stand & Holder</a></li>
+<li><a href="https://www.jakartanotebook.com/tablet-screen-protector">Tablet Screen Protector</a></li>
+<li><a href="https://www.jakartanotebook.com/keyboard-tablet">Keyboard Tablet</a></li>
+<li><a href="https://www.jakartanotebook.com/pernak-pernik-tablet">Pernak Pernik Tablet</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/aksesoris-tablet-and-smartphone">Aksesoris Tablet & Smartphone</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/kabel-charger-and-data">Kabel Charger & Data</a></li>
+<li><a href="https://www.jakartanotebook.com/touch-pen-or-stylus">Touch Pen / Stylus</a></li>
+<li><a href="https://www.jakartanotebook.com/cleaning-kit">Cleaning Kit</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/baterai-and-charger">Baterai & Charger</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/smartphone-charger">Smartphone Charger</a></li>
+<li><a href="https://www.jakartanotebook.com/power-bank">Power Bank</a></li>
+<li><a href="https://www.jakartanotebook.com/baterai-smartphone">Baterai Smartphone</a></li>
+ <li><a href="https://www.jakartanotebook.com/baterai-tablet">Baterai Tablet</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/spare-part-smartphone-and-tablet">Spare Part Smartphone & Tablet</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/spare-part-lcd-smartphone-and-tablet">Spare Part LCD Smartphone & Tablet</a></li>
+<li><a href="https://www.jakartanotebook.com/spare-part-keyboard-smartphone">Spare Part Keyboard Smartphone</a></li>
+<li><a href="https://www.jakartanotebook.com/spare-part-lainnya">Spare Part Lainnya</a></li>
+<li><a href="https://www.jakartanotebook.com/peralatan-reparasi-smartphone-and-tablet">Peralatan Reparasi Smartphone & Tablet</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/kartu-perdana">Kartu Perdana</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/kartu-gsm">Kartu GSM</a></li>
+<li><a href="https://www.jakartanotebook.com/sim-adapter">SIM Adapter</a></li>
+<li><a href="https://www.jakartanotebook.com/pemotong-kartu-sim">Pemotong Kartu SIM</a></li>
+</ul>
+</li>
+</ul>
+<a class="menu--sub__banner"></a>
+</div>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/electronic">Electronic</a>
+<div class="menu--sub__wrapper" data-sub="electronic">
+<ul class="menu--sub container">
+<li>
+<a href="https://www.jakartanotebook.com/tv">TV</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/televisi">Televisi</a></li>
+<li><a href="https://www.jakartanotebook.com/antena-tv">Antena TV</a></li>
+<li><a href="https://www.jakartanotebook.com/kacamata-3d">Kacamata 3D</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-tv-lainnya">Aksesoris TV Lainnya</a></li>
+</ul>
+</li>
+ <li>
+<a href="https://www.jakartanotebook.com/video">Video</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/hd-media-player">HD Media Player</a></li>
+<li><a href="https://www.jakartanotebook.com/streaming-media-player">Streaming Media Player</a></li>
+<li><a href="https://www.jakartanotebook.com/tv-tuner">TV Tuner</a></li>
+<li><a href="https://www.jakartanotebook.com/konverter-and-ekstender-video">Konverter & Ekstender Video</a></li>
+<li><a href="https://www.jakartanotebook.com/switch-and-splitter-video">Switch & Splitter Video</a></li>
+<li><a href="https://www.jakartanotebook.com/remote-control-video">Remote Control Video</a></li>
+<li><a href="https://www.jakartanotebook.com/spare-part-video-player">Spare Part Video Player</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/audio">Audio</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/mp3-player-and-ipod">MP3 Player & iPod</a></li>
+<li><a href="https://www.jakartanotebook.com/speaker">Speaker</a></li>
+<li><a href="https://www.jakartanotebook.com/headset">Headset</a></li>
+<li><a href="https://www.jakartanotebook.com/earphone">Earphone</a></li>
+<li><a href="https://www.jakartanotebook.com/microphone">Microphone</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-earphone-and-headphone">Aksesoris Earphone & Headphone</a></li>
+<li><a href="https://www.jakartanotebook.com/amplifier-and-dac">Amplifier & DAC</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-audio">Aksesoris Audio</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/gadget">Gadget</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/smartwatch">Smartwatch</a></li>
+<li><a href="https://www.jakartanotebook.com/watchband">Watchband</a></li>
+<li><a href="https://www.jakartanotebook.com/pelindung-smartwatch">Pelindung Smartwatch</a></li>
+<li><a href="https://www.jakartanotebook.com/smart-tracking">Smart Tracking</a></li>
+<li><a href="https://www.jakartanotebook.com/tracker-fitness-and-aktifitas">Tracker Fitness & Aktifitas</a></li>
+<li><a href="https://www.jakartanotebook.com/virtual-reality">Virtual Reality</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/pendingin-ruangan">Pendingin Ruangan</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/air-humidifier-and-purifier">Air Humidifier & Purifier</a></li>
+<li><a href="https://www.jakartanotebook.com/kipas-and-ac">Kipas & AC</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/elektronik-rumah">Elektronik Rumah</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/rice-cooker">Rice Cooker</a></li>
+<li><a href="https://www.jakartanotebook.com/kompor-listrik">Kompor Listrik</a></li>
+<li><a href="https://www.jakartanotebook.com/blender">Blender</a></li>
+<li><a href="https://www.jakartanotebook.com/vacuum-cleaner">Vacuum Cleaner</a></li>
+<li><a href="https://www.jakartanotebook.com/setrika">Setrika</a></li>
+<li><a href="https://www.jakartanotebook.com/peralatan-jahit">Peralatan Jahit</a></li>
+<li><a href="https://www.jakartanotebook.com/elektronik-rumah-lainnya">Elektronik Rumah Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/cctv">CCTV</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/cctv-dome">CCTV Dome</a></li>
+<li><a href="https://www.jakartanotebook.com/cctv-bullet">CCTV Bullet</a></li>
+<li><a href="https://www.jakartanotebook.com/cctv-meja">CCTV Meja</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-kamera-keamanan">Aksesoris Kamera Keamanan</a></li>
+ </ul>
+</li>
+</ul>
+<a class="menu--sub__banner"></a>
+</div>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/home-appliance">Home Appliance</a>
+<div class="menu--sub__wrapper" data-sub="home appliance">
+<ul class="menu--sub container">
+<li>
+<a href="https://www.jakartanotebook.com/perlengkapan-dapur-and-ruang-makan">Perlengkapan Dapur & Ruang Makan</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/pisau-dapur-and-pengasah-pisau">Pisau Dapur & Pengasah Pisau</a></li>
+<li><a href="https://www.jakartanotebook.com/panci">Panci</a></li>
+<li><a href="https://www.jakartanotebook.com/gunting-dapur">Gunting Dapur</a></li>
+<li><a href="https://www.jakartanotebook.com/sendok-and-garpu">Sendok & Garpu</a></li>
+<li><a href="https://www.jakartanotebook.com/toples-and-tempat-bumbu">Toples & Tempat Bumbu</a></li>
+<li><a href="https://www.jakartanotebook.com/cetakan-es-batu">Cetakan Es Batu</a></li>
+<li><a href="https://www.jakartanotebook.com/pengupas-sayur-and-buah">Pengupas Sayur & Buah</a></li>
+<li><a href="https://www.jakartanotebook.com/botol-minum">Botol Minum</a></li>
+<li><a href="https://www.jakartanotebook.com/gelas">Gelas</a></li>
+<li><a href="https://www.jakartanotebook.com/kotak-makan">Kotak Makan</a></li>
+<li><a href="https://www.jakartanotebook.com/pompa-galon">Pompa Galon</a></li>
+<li><a href="https://www.jakartanotebook.com/timer-dapur">Timer Dapur</a></li>
+<li><a href="https://www.jakartanotebook.com/mesin-kopi-and-teh">Mesin Kopi & Teh</a></li>
+<li><a href="https://www.jakartanotebook.com/perlengkapan-dapur-lainnya">Perlengkapan Dapur Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/furnitur-rumah">Furnitur Rumah</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/lemari">Lemari</a></li>
+<li><a href="https://www.jakartanotebook.com/kursi">Kursi</a></li>
+ <li><a href="https://www.jakartanotebook.com/rak">Rak</a></li>
+<li><a href="https://www.jakartanotebook.com/pintu">Pintu</a></li>
+<li><a href="https://www.jakartanotebook.com/furnitur-rumah-lainnya">Furnitur Rumah Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/dekorasi-rumah">Dekorasi Rumah</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/wallpaper-dinding">Wallpaper Dinding</a></li>
+<li><a href="https://www.jakartanotebook.com/jam">Jam</a></li>
+<li><a href="https://www.jakartanotebook.com/payung">Payung</a></li>
+<li><a href="https://www.jakartanotebook.com/dekorasi-rumah-lainnya">Dekorasi Rumah Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/perawatan-rumah">Perawatan Rumah</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/saklar-and-stop-kontak-listrik">Saklar & Stop Kontak Listrik</a></li>
+<li><a href="https://www.jakartanotebook.com/alat-pembasmi-serangga">Alat Pembasmi Serangga</a></li>
+<li><a href="https://www.jakartanotebook.com/alarm-sensor-and-bel-rumah">Alarm, Sensor & Bel Rumah</a></li>
+<li><a href="https://www.jakartanotebook.com/surge-protector-or-suppresor">Surge Protector / Suppresor</a></li>
+<li><a href="https://www.jakartanotebook.com/selang-and-kepala-semprotan-taman">Selang & Kepala Semprotan Taman</a></li>
+<li><a href="https://www.jakartanotebook.com/perawatan-taman-and-tumbuhan">Perawatan Taman & Tumbuhan</a></li>
+<li><a href="https://www.jakartanotebook.com/perawatan-rumah-lainnya">Perawatan Rumah Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/perkakas">Perkakas</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/obeng-tang--kunci-pas">Obeng, Tang , Kunci Pas</a></li>
+<li><a href="https://www.jakartanotebook.com/pisau">Pisau</a></li>
+ <li><a href="https://www.jakartanotebook.com/bor-listrik">Bor Listrik</a></li>
+<li><a href="https://www.jakartanotebook.com/solder-and-heat-gun">Solder & Heat Gun</a></li>
+<li><a href="https://www.jakartanotebook.com/gerinda">Gerinda</a></li>
+<li><a href="https://www.jakartanotebook.com/meteran">Meteran</a></li>
+<li><a href="https://www.jakartanotebook.com/tester-listrik-and-multimeter">Tester Listrik & Multimeter</a></li>
+<li><a href="https://www.jakartanotebook.com/kotak-perkakas">Kotak Perkakas</a></li>
+<li><a href="https://www.jakartanotebook.com/perkakas-lainnya">Perkakas Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/perlengkapan-ledeng">Perlengkapan Ledeng</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/kepala-shower">Kepala Shower</a></li>
+<li><a href="https://www.jakartanotebook.com/holder-shower">Holder Shower</a></li>
+<li><a href="https://www.jakartanotebook.com/keran-air">Keran Air</a></li>
+<li><a href="https://www.jakartanotebook.com/saringan-air">Saringan Air</a></li>
+<li><a href="https://www.jakartanotebook.com/pompa-air">Pompa Air</a></li>
+<li><a href="https://www.jakartanotebook.com/perlengkapan-ledeng-lainnya">Perlengkapan Ledeng Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/lampu-rumah">Lampu Rumah</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/bohlam-led">Bohlam LED</a></li>
+<li><a href="https://www.jakartanotebook.com/lampu-hias-led">Lampu Hias LED</a></li>
+<li><a href="https://www.jakartanotebook.com/lampu-baca-or-meja-belajar">Lampu Baca / Meja Belajar</a></li>
+<li><a href="https://www.jakartanotebook.com/lampu-malam-or-lampu-tempat-tidur">Lampu Malam / Lampu Tempat Tidur</a></li>
+<li><a href="https://www.jakartanotebook.com/lampu-dinding-and-tempel">Lampu Dinding & Tempel</a></li>
+<li><a href="https://www.jakartanotebook.com/lampu-tenaga-surya">Lampu Tenaga Surya</a></li>
+ <li><a href="https://www.jakartanotebook.com/lampu-taman">Lampu Taman</a></li>
+<li><a href="https://www.jakartanotebook.com/fitting-lampu">Fitting Lampu</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/perlengkapan-hewan-peliharaan">Perlengkapan Hewan Peliharaan</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/alat-tulis-kantor">Alat Tulis Kantor</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/pena-and-pensil">Pena & Pensil</a></li>
+<li><a href="https://www.jakartanotebook.com/kalkulator">Kalkulator</a></li>
+<li><a href="https://www.jakartanotebook.com/tempat-alat-tulis">Tempat Alat Tulis</a></li>
+<li><a href="https://www.jakartanotebook.com/buku-tulis">Buku Tulis</a></li>
+<li><a href="https://www.jakartanotebook.com/stapler">Stapler</a></li>
+<li><a href="https://www.jakartanotebook.com/mesin-penghancur-kertas">Mesin Penghancur Kertas</a></li>
+<li><a href="https://www.jakartanotebook.com/microscope-and-endoscope">Microscope & Endoscope</a></li>
+<li><a href="https://www.jakartanotebook.com/peralatan-seni-and-lukis">Peralatan Seni & Lukis</a></li>
+<li><a href="https://www.jakartanotebook.com/alat-tulis-kantor-lainnya">Alat Tulis Kantor Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/as-you-seen-on-tv">As You Seen on TV</a>
+</li>
+</ul>
+<a class="menu--sub__banner"></a>
+</div>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/photography">Photography</a>
+<div class="menu--sub__wrapper" data-sub="photography">
+<ul class="menu--sub container">
+<li>
+<a href="https://www.jakartanotebook.com/kamera-foto">Kamera Foto</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/kamera-video-or-handycam">Kamera Video / Handycam</a>
+<ul class="menu--sub2">
+ <li><a href="https://www.jakartanotebook.com/camcorder-or-handycam">Camcorder / Handycam</a></li>
+<li><a href="https://www.jakartanotebook.com/kamera-drone">Kamera Drone</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/action-camera">Action Camera</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/hd-action-camera">HD Action Camera</a></li>
+<li><a href="https://www.jakartanotebook.com/belt-or-sling-or-strap-action-camera">Belt / Sling / Strap Action Camera</a></li>
+<li><a href="https://www.jakartanotebook.com/casing-action-camera">Casing Action Camera</a></li>
+<li><a href="https://www.jakartanotebook.com/filter-lensa-action-camera">Filter Lensa Action Camera</a></li>
+<li><a href="https://www.jakartanotebook.com/mount-action-camera">Mount Action Camera</a></li>
+<li><a href="https://www.jakartanotebook.com/baut-action-camera">Baut Action Camera</a></li>
+<li><a href="https://www.jakartanotebook.com/tas-action-camera">Tas Action Camera</a></li>
+<li><a href="https://www.jakartanotebook.com/monopod-and-grip-action-camera">Monopod & Grip Action Camera</a></li>
+<li><a href="https://www.jakartanotebook.com/remote-control-action-camera">Remote Control Action Camera</a></li>
+<li><a href="https://www.jakartanotebook.com/baterai-and-charger-action-camera">Baterai & Charger Action Camera</a></li>
+<li><a href="https://www.jakartanotebook.com/pernak-pernik-action-camera">Pernak Pernik Action Camera</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/aksesoris-kamera">Aksesoris Kamera</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/perlengkapan-lightning-and-studio">Perlengkapan Lightning & Studio</a></li>
+<li><a href="https://www.jakartanotebook.com/casing-pelindung-kamera">Casing Pelindung Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/remote-control-kamera">Remote Control Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/belt-or-sling-or-strap-kamera">Belt / Sling / Strap Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/flash-kamera">Flash Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/viewfinder-and-monitor-kamera">Viewfinder & Monitor Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/mikrofon-kamera">Mikrofon Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/time-lapse">Time Lapse</a></li>
+<li><a href="https://www.jakartanotebook.com/charger-kamera">Charger Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/baterai-kamera">Baterai Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/tas-kamera">Tas Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/pelindung-layar-kamera">Pelindung Layar Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-kamera-lainnya">Aksesoris Kamera Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/lensa-and-aksesoris">Lensa & Aksesoris</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/lensa-kamera">Lensa Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/lens-hood">Lens Hood</a></li>
+<li><a href="https://www.jakartanotebook.com/lens-cap">Lens Cap</a></li>
+<li><a href="https://www.jakartanotebook.com/pembersih-lensa">Pembersih Lensa</a></li>
+<li><a href="https://www.jakartanotebook.com/filter-kamera">Filter Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/ekstension-lensa">Ekstension Lensa</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/tripod-monopod-and-stabilizer">Tripod, Monopod & Stabilizer</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/mini-tripod">Mini Tripod</a></li>
+<li><a href="https://www.jakartanotebook.com/professional-tripod">Professional Tripod</a></li>
+<li><a href="https://www.jakartanotebook.com/monopod-or-tongsis">Monopod / Tongsis</a></li>
+<li><a href="https://www.jakartanotebook.com/camera-stabilizer">Camera Stabilizer</a></li>
+<li><a href="https://www.jakartanotebook.com/gimbal-kamera">Gimbal Kamera</a></li>
+<li><a href="https://www.jakartanotebook.com/tripod-dolly">Tripod Dolly</a></li>
+<li><a href="https://www.jakartanotebook.com/clamp-kamera-and-smartphone">Clamp Kamera & Smartphone</a></li>
+</ul>
+</li>
+</ul>
+<a class="menu--sub__banner"></a>
+</div>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/fashion-make-up-and-beauty-care">Fashion, Make Up & Beauty Care</a>
+<div class="menu--sub__wrapper" data-sub="fashion, make up & beauty care">
+<ul class="menu--sub container">
+<li>
+<a href="https://www.jakartanotebook.com/fashion-wanita">Fashion Wanita</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/pakaian-wanita">Pakaian Wanita</a></li>
+<li><a href="https://www.jakartanotebook.com/sepatu-and-sandal-wanita">Sepatu & Sandal Wanita</a></li>
+<li><a href="https://www.jakartanotebook.com/tas-wanita">Tas Wanita</a></li>
+<li><a href="https://www.jakartanotebook.com/pakaian-dalam-and-shapewear-wanita">Pakaian Dalam & Shapewear Wanita</a></li>
+<li><a href="https://www.jakartanotebook.com/dompet-wanita">Dompet Wanita</a></li>
+<li><a href="https://www.jakartanotebook.com/jam-tangan-wanita">Jam Tangan Wanita</a></li>
+<li><a href="https://www.jakartanotebook.com/kacamata-wanita">Kacamata Wanita</a></li>
+<li><a href="https://www.jakartanotebook.com/topi-wanita">Topi Wanita</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-fashion-wanita">Aksesoris Fashion Wanita</a></li>
+<li><a href="https://www.jakartanotebook.com/kaos-kaki-wanita">Kaos Kaki Wanita</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/fashion-pria">Fashion Pria</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/pakaian-pria">Pakaian Pria</a></li>
+<li><a href="https://www.jakartanotebook.com/sepatu-and-sandal-pria">Sepatu & Sandal Pria</a></li>
+<li><a href="https://www.jakartanotebook.com/tas-pria">Tas Pria</a></li>
+<li><a href="https://www.jakartanotebook.com/pakaian-dalam-pria">Pakaian Dalam Pria</a></li>
+<li><a href="https://www.jakartanotebook.com/dompet-pria">Dompet Pria</a></li>
+<li><a href="https://www.jakartanotebook.com/jam-tangan-pria">Jam Tangan Pria</a></li>
+<li><a href="https://www.jakartanotebook.com/kacamata-pria">Kacamata Pria</a></li>
+<li><a href="https://www.jakartanotebook.com/topi-pria">Topi Pria</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-fashion-pria">Aksesoris Fashion Pria</a></li>
+<li><a href="https://www.jakartanotebook.com/kaos-kaki-pria">Kaos Kaki Pria</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/perhiasan">Perhiasan</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/gelang-and-bangles">Gelang & Bangles</a></li>
+<li><a href="https://www.jakartanotebook.com/anting">Anting</a></li>
+<li><a href="https://www.jakartanotebook.com/kalung-and-liontin">Kalung & Liontin</a></li>
+<li><a href="https://www.jakartanotebook.com/cincin">Cincin</a></li>
+<li><a href="https://www.jakartanotebook.com/perhiasan-lainnya">Perhiasan Lainnya</a></li>
+<li><a href="https://www.jakartanotebook.com/kotak-perhiasan">Kotak Perhiasan</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/makeup">Makeup</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/eye-shadow">Eye Shadow</a></li>
+<li><a href="https://www.jakartanotebook.com/cc-cream-and-bb-cream">CC Cream & BB Cream</a></li>
+<li><a href="https://www.jakartanotebook.com/blush-on">Blush On</a></li>
+<li><a href="https://www.jakartanotebook.com/pensil-alis">Pensil Alis</a></li>
+<li><a href="https://www.jakartanotebook.com/maskara">Maskara</a></li>
+<li><a href="https://www.jakartanotebook.com/eye-liner">Eye Liner</a></li>
+<li><a href="https://www.jakartanotebook.com/lipstick">Lipstick</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/aksesoris-makeup">Aksesoris Makeup</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/brush-makeup">Brush Makeup</a></li>
+<li><a href="https://www.jakartanotebook.com/tas-makeup">Tas Makeup</a></li>
+<li><a href="https://www.jakartanotebook.com/cermin-makeup">Cermin Makeup</a></li>
+<li><a href="https://www.jakartanotebook.com/pinset">Pinset</a></li>
+<li><a href="https://www.jakartanotebook.com/pelentik-bulu-mata">Pelentik Bulu Mata</a></li>
+<li><a href="https://www.jakartanotebook.com/spons-bedak">Spons Bedak</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-makeup-lainnya">Aksesoris Makeup Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/perawatan-kuku">Perawatan Kuku</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/cat-kuku">Cat Kuku</a></li>
+<li><a href="https://www.jakartanotebook.com/nail-art-and-stiker-kuku">Nail Art & Stiker Kuku</a></li>
+<li><a href="https://www.jakartanotebook.com/manikur-and-aksesoris">Manikur & Aksesoris</a></li>
+<li><a href="https://www.jakartanotebook.com/kuku-palsu">Kuku Palsu</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/alat-kesehatan-and-kecantikan">Alat Kesehatan & Kecantikan</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/alat-perawatan-kulit">Alat Perawatan Kulit</a></li>
+<li><a href="https://www.jakartanotebook.com/pengering-rambut">Pengering Rambut</a></li>
+<li><a href="https://www.jakartanotebook.com/hair-styler">Hair Styler</a></li>
+<li><a href="https://www.jakartanotebook.com/sikat-and-sisir-rambut">Sikat & Sisir Rambut</a></li>
+<li><a href="https://www.jakartanotebook.com/gunting-rambut">Gunting Rambut</a></li>
+ <li><a href="https://www.jakartanotebook.com/rambut-palsu-and-hair-extension">Rambut Palsu & Hair Extension</a></li>
+<li><a href="https://www.jakartanotebook.com/alat-pelangsing-and-pemijat-elektrik">Alat Pelangsing & Pemijat Elektrik</a></li>
+<li><a href="https://www.jakartanotebook.com/alat-kecantikan-lainnya">Alat Kecantikan Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/perawatan-kulit">Perawatan Kulit</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/parfum">Parfum</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/perlengkapan-cukur-jenggot-and-kumis">Perlengkapan Cukur Jenggot & Kumis</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/perlengkapan-medis">Perlengkapan Medis</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/p3k">P3K</a></li>
+<li><a href="https://www.jakartanotebook.com/timbangan-badan">Timbangan Badan</a></li>
+<li><a href="https://www.jakartanotebook.com/pedometer">Pedometer</a></li>
+<li><a href="https://www.jakartanotebook.com/monitor-tekanan-darah">Monitor Tekanan Darah</a></li>
+<li><a href="https://www.jakartanotebook.com/thermometer-and-alat-ukur-lainnya">Thermometer & Alat Ukur Lainnya</a></li>
+<li><a href="https://www.jakartanotebook.com/perlengkapan-medis-lainnya">Perlengkapan Medis Lainnya</a></li>
+</ul>
+</li>
+</ul>
+<a class="menu--sub__banner"></a>
+</div>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/toys-kids-and-baby">Toys, Kids & Baby</a>
+<div class="menu--sub__wrapper" data-sub="toys, kids & baby">
+<ul class="menu--sub container">
+<li>
+<a href="https://www.jakartanotebook.com/mainan">Mainan</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/mainan-action-figure">Mainan Action Figure</a></li>
+<li><a href="https://www.jakartanotebook.com/mainan-edukasi">Mainan Edukasi</a></li>
+<li><a href="https://www.jakartanotebook.com/mainan-bayi">Mainan Bayi</a></li>
+<li><a href="https://www.jakartanotebook.com/mainan-dalam-ruangan">Mainan Dalam Ruangan</a></li>
+<li><a href="https://www.jakartanotebook.com/mainan-kendaraan">Mainan Kendaraan</a></li>
+<li><a href="https://www.jakartanotebook.com/fidget-toy">Fidget Toy</a></li>
+<li><a href="https://www.jakartanotebook.com/squishy">Squishy</a></li>
+<li><a href="https://www.jakartanotebook.com/puzzle">Puzzle</a></li>
+<li><a href="https://www.jakartanotebook.com/board-game">Board Game</a></li>
+<li><a href="https://www.jakartanotebook.com/mainan-lainnya">Mainan Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/boneka">Boneka</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/remot-kontrol">Remot Kontrol</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/remot-kontrol-mobil-and-motor">Remot Kontrol Mobil & Motor</a></li>
+<li><a href="https://www.jakartanotebook.com/remot-kontrol-pesawat">Remot Kontrol Pesawat</a></li>
+<li><a href="https://www.jakartanotebook.com/remot-kontrol-helikopter">Remot Kontrol Helikopter</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-rc-pesawat-and-helikopter">Aksesoris RC Pesawat & Helikopter</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/drone">Drone</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/drone-mini">Drone Mini</a></li>
+<li><a href="https://www.jakartanotebook.com/drone-profesional">Drone Profesional</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-drone">Aksesoris Drone</a></li>
+<li><a href="https://www.jakartanotebook.com/baterai-drone-and-rc">Baterai Drone & RC</a></li>
+</ul>
+</li>
+ <li>
+<a href="https://www.jakartanotebook.com/perlengkapan-bayi">Perlengkapan Bayi</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/pakaian-bayi">Pakaian Bayi</a></li>
+<li><a href="https://www.jakartanotebook.com/perlengkapan-stroller-bayi">Perlengkapan Stroller Bayi</a></li>
+<li><a href="https://www.jakartanotebook.com/pompa-asi">Pompa ASI</a></li>
+<li><a href="https://www.jakartanotebook.com/dot-bayi">Dot Bayi</a></li>
+<li><a href="https://www.jakartanotebook.com/perlengkapan-makan-bayi">Perlengkapan Makan Bayi</a></li>
+<li><a href="https://www.jakartanotebook.com/perlengkapan-bayi-lainnya">Perlengkapan Bayi Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/skuter-and-skateboard-elektrik">Skuter & Skateboard Elektrik</a>
+</li>
+</ul>
+<a class="menu--sub__banner"></a>
+</div>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/hobby">Hobby</a>
+<div class="menu--sub__wrapper" data-sub="hobby">
+<ul class="menu--sub container">
+<li>
+<a href="https://www.jakartanotebook.com/vape-vaporizer">Vape (Vaporizer)</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/rokok-elektrik">Rokok Elektrik</a></li>
+<li><a href="https://www.jakartanotebook.com/mods-rokok-elektrik">Mods Rokok Elektrik</a></li>
+<li><a href="https://www.jakartanotebook.com/tank-and-atomizer">Tank & Atomizer</a></li>
+<li><a href="https://www.jakartanotebook.com/e-liqiud-or-e-juice">e-Liqiud / e-Juice</a></li>
+<li><a href="https://www.jakartanotebook.com/drip-tip">Drip Tip</a></li>
+<li><a href="https://www.jakartanotebook.com/coil-rokok-elektrik">Coil Rokok Elektrik</a></li>
+<li><a href="https://www.jakartanotebook.com/cotton-and-wick-rokok-elektrik">Cotton & Wick Rokok Elektrik</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-rokok-elektrik">Aksesoris Rokok Elektrik</a></li>
+</ul>
+</li>
+ <li>
+<a href="https://www.jakartanotebook.com/korek-api-and-aksesoris">Korek Api & Aksesoris</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/korek-api">Korek Api</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-rokok-and-korek-api">Aksesoris Rokok & Korek Api</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/mobil">Mobil</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/car-inverter-dc-ac">Car Inverter DC-AC</a></li>
+<li><a href="https://www.jakartanotebook.com/car-lamp">Car Lamp</a></li>
+<li><a href="https://www.jakartanotebook.com/cover-mobil">Cover Mobil</a></li>
+<li><a href="https://www.jakartanotebook.com/media-player-mobil">Media Player Mobil</a></li>
+<li><a href="https://www.jakartanotebook.com/gps">GPS</a></li>
+<li><a href="https://www.jakartanotebook.com/audio-transmitter-mobil">Audio Transmitter Mobil</a></li>
+<li><a href="https://www.jakartanotebook.com/cover-jok-mobil">Cover Jok Mobil</a></li>
+<li><a href="https://www.jakartanotebook.com/dekorasi-mobil">Dekorasi Mobil</a></li>
+<li><a href="https://www.jakartanotebook.com/tpms">TPMS</a></li>
+<li><a href="https://www.jakartanotebook.com/kamera-mobil">Kamera Mobil</a></li>
+<li><a href="https://www.jakartanotebook.com/peralatan-uji-and-diagnosa-otomotif">Peralatan Uji & Diagnosa Otomotif</a></li>
+<li><a href="https://www.jakartanotebook.com/jump-starter-aki-and-charger-baterai-otomotif">Jump Starter, Aki & Charger Baterai Otomotif</a></li>
+<li><a href="https://www.jakartanotebook.com/kompresor-angin">Kompresor Angin</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-mobil-lainnya">Aksesoris Mobil Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/motor">Motor</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/cover-motor">Cover Motor</a></li>
+ <li><a href="https://www.jakartanotebook.com/jaket-and-jas-hujan-motor">Jaket & Jas Hujan Motor</a></li>
+<li><a href="https://www.jakartanotebook.com/masker-anti-polusi">Masker Anti Polusi</a></li>
+<li><a href="https://www.jakartanotebook.com/sarung-tangan-motor">Sarung Tangan Motor</a></li>
+<li><a href="https://www.jakartanotebook.com/helm-motor">Helm Motor</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-motor-lainnya">Aksesoris Motor Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/aksesoris-video-game">Aksesoris Video Game</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/alat-musik">Alat Musik</a>
+</li>
+</ul>
+<a class="menu--sub__banner"></a>
+</div>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/sport-and-outdoor">Sport & Outdoor</a>
+<div class="menu--sub__wrapper" data-sub="sport & outdoor">
+<ul class="menu--sub container">
+<li>
+<a href="https://www.jakartanotebook.com/olahraga-lari">Olahraga Lari</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/tas-and-ikat-pinggang-lari">Tas & Ikat Pinggang Lari</a></li>
+<li><a href="https://www.jakartanotebook.com/sleeves-tangan-and-kaki">Sleeves Tangan & Kaki</a></li>
+<li><a href="https://www.jakartanotebook.com/armband">Armband</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-lari-lainnya">Aksesoris Lari Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/olahraga-sepeda">Olahraga Sepeda</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/bike-lamp">Bike Lamp</a></li>
+<li><a href="https://www.jakartanotebook.com/tas-barang-sepeda">Tas Barang Sepeda</a></li>
+<li><a href="https://www.jakartanotebook.com/pompa-ban-sepeda">Pompa Ban Sepeda</a></li>
+<li><a href="https://www.jakartanotebook.com/gembok-sepeda">Gembok Sepeda</a></li>
+ <li><a href="https://www.jakartanotebook.com/helm-sepeda">Helm Sepeda</a></li>
+<li><a href="https://www.jakartanotebook.com/spare-part-sepeda">Spare Part Sepeda</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-sepeda-lainnya">Aksesoris Sepeda Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/olahraga-renang-and-diving">Olahraga Renang & Diving</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/baju-renang-and-diving">Baju Renang & Diving</a></li>
+<li><a href="https://www.jakartanotebook.com/kacamata-renang-and-diving">Kacamata Renang & Diving</a></li>
+<li><a href="https://www.jakartanotebook.com/kaki-katak">Kaki Katak</a></li>
+<li><a href="https://www.jakartanotebook.com/snorkel-diving">Snorkel Diving</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-renang-and-diving-lainnya">Aksesoris Renang & Diving Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/olahraga-lainnya">Olahraga Lainnya</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/camping-and-hiking">Camping & Hiking</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/tenda-and-hammock">Tenda &Hammock</a></li>
+<li><a href="https://www.jakartanotebook.com/tongkat-trekking">Tongkat Trekking</a></li>
+<li><a href="https://www.jakartanotebook.com/peralatan-panjat-tebing">Peralatan Panjat Tebing</a></li>
+<li><a href="https://www.jakartanotebook.com/cooler-and-hidrasi-camping">Cooler & Hidrasi Camping</a></li>
+<li><a href="https://www.jakartanotebook.com/alat-masak-camping">Alat Masak Camping</a></li>
+<li><a href="https://www.jakartanotebook.com/perlengkapan-edc-and-survival">Perlengkapan EDC & Survival</a></li>
+<li><a href="https://www.jakartanotebook.com/walkie-talkie">Walkie Talkie</a></li>
+<li><a href="https://www.jakartanotebook.com/teropong-and-teleskop">Teropong & Teleskop</a></li>
+<li><a href="https://www.jakartanotebook.com/karabiner-and-quickdraw">Karabiner & Quickdraw</a></li>
+<li><a href="https://www.jakartanotebook.com/peralatan-camping-lainnya">Peralatan Camping Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/senter-led">Senter LED</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/senter-led-mini">Senter LED Mini</a></li>
+<li><a href="https://www.jakartanotebook.com/senter-led-professional">Senter LED Professional</a></li>
+<li><a href="https://www.jakartanotebook.com/senter-led-kepala-or-headlamp">Senter LED Kepala / Headlamp</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-senter-led">Aksesoris Senter LED</a></li>
+<li><a href="https://www.jakartanotebook.com/baterai">Baterai</a></li>
+<li><a href="https://www.jakartanotebook.com/charger-baterai">Charger Baterai</a></li>
+<li><a href="https://www.jakartanotebook.com/casing-baterai">Casing Baterai</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/olahraga-memancing">Olahraga Memancing</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/joran-pancing">Joran Pancing</a></li>
+<li><a href="https://www.jakartanotebook.com/senar-pancing">Senar Pancing</a></li>
+<li><a href="https://www.jakartanotebook.com/umpan-pancing">Umpan Pancing</a></li>
+<li><a href="https://www.jakartanotebook.com/aksesoris-pancing-lainnya">Aksesoris Pancing Lainnya</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/fitness-and-yoga">Fitness & Yoga</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/pakaian-and-sepatu-olahraga">Pakaian & Sepatu Olahraga</a>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/pelindung-tubuh">Pelindung Tubuh</a>
+<ul class="menu--sub2">
+ <li><a href="https://www.jakartanotebook.com/pelindung-tubuh-and-decker">Pelindung Tubuh & Decker</a></li>
+<li><a href="https://www.jakartanotebook.com/helm-pelindung">Helm Pelindung</a></li>
+</ul>
+</li>
+<li>
+<a href="https://www.jakartanotebook.com/traveling">Traveling</a>
+<ul class="menu--sub2">
+<li><a href="https://www.jakartanotebook.com/koper-and-tas-travel">Koper & Tas Travel</a></li>
+<li><a href="https://www.jakartanotebook.com/tag-koper">Tag Koper</a></li>
+<li><a href="https://www.jakartanotebook.com/timbangan-koper">Timbangan Koper</a></li>
+<li><a href="https://www.jakartanotebook.com/gembok-koper">Gembok Koper</a></li>
+<li><a href="https://www.jakartanotebook.com/cover-koper">Cover Koper</a></li>
+<li><a href="https://www.jakartanotebook.com/cover-passport">Cover Passport</a></li>
+<li><a href="https://www.jakartanotebook.com/bantal-leher">Bantal Leher</a></li>
+<li><a href="https://www.jakartanotebook.com/botol-travel">Botol Travel</a></li>
+<li><a href="https://www.jakartanotebook.com/organizer-pengepakan">Organizer Pengepakan</a></li>
+<li><a href="https://www.jakartanotebook.com/adapter-and-konverter-travel">Adapter & Konverter Travel</a></li>
+<li><a href="https://www.jakartanotebook.com/disposible-travel">Disposible Travel</a></li>
+<li><a href="https://www.jakartanotebook.com/perlengkapan-travel-lainnya">Perlengkapan Travel Lainnya</a></li>
+</ul>
+</li>
+</ul>
+<a class="menu--sub__banner"></a>
+</div>
+</li>
+<li><a href="https://www.jakartanotebook.com/tag" class="header__tag__link">koleksi</a></li>
+</ul>
+</nav>
+<div class="container">
+<ul class="crumb">
+<li> <a href="https://www.jakartanotebook.com/" title="Home">Home</a></li>
+<li> <a href="https://www.jakartanotebook.com/sport-and-outdoor" title="Sport & Outdoor">Sport & Outdoor</a></li>
+<li> <a href="https://www.jakartanotebook.com/olahraga-lainnya" title="Olahraga Lainnya">Olahraga Lainnya</a></li>
+<li>REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange</li>
+</ul>
+</div>
+
+<div class="mainContent">
+<div class="container" style="margin:auto" itemscope itemtype="http://schema.org/Product">
+
+<section class="detailHeader box">
+
+<div class="title">
+<span itemprop="name"><h1>REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange</h1></span>
+<a href="javascript:window.print()" class="no-print" onclick="amplitude.getInstance().logEvent('print_pdp');"><i class="fa fa-print"></i>&nbsp;&nbsp;Print</a>
+</div>
+
+<div class="detailProductWrapper">
+<div class="detailGalleryWrapper">
+<div class="detailGallery">
+<a itemprop="image" href="https://www.jakartanotebook.com/images/products/80/868/36146/10/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-1.jpg" title="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 1"><img src="https://www.jakartanotebook.com/images/products/80/868/36146/10/279/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-1.jpg" alt="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 1"></a>
+<a itemprop="image" href="https://www.jakartanotebook.com/images/products/80/868/36146/10/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-2.jpg" title="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 2"><img src="https://www.jakartanotebook.com/images/products/80/868/36146/10/279/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-2.jpg" alt="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 2"></a>
+<a itemprop="image" href="https://www.jakartanotebook.com/images/products/80/868/36146/10/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-3.jpg" title="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 3"><img src="https://www.jakartanotebook.com/images/products/80/868/36146/10/279/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-3.jpg" alt="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 3"></a>
+<a itemprop="image" href="https://www.jakartanotebook.com/images/products/80/868/36146/10/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-4.jpg" title="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 4"><img src="https://www.jakartanotebook.com/images/products/80/868/36146/10/279/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-4.jpg" alt="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 4"></a>
+<a itemprop="image" href="https://www.jakartanotebook.com/images/products/80/868/36146/10/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-5.jpg" title="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 5"><img src="https://www.jakartanotebook.com/images/products/80/868/36146/10/279/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-5.jpg" alt="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 5"></a>
+</div>
+</div>
+<div class="detailInfo">
+<div class="reviewTop" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+Customer Reviews :
+<div class="productRating">
+<i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i> </div>
+<meta itemprop="worstRating" content="0">
+<meta itemprop="bestRating" content="5" />
+<meta itemprop="ratingValue" content="5" />
+<a href="#customer-reviews" class="goto-anchor" title="1 total review"><span title="1 total review" class="ratingCount">(<span itemprop="reviewCount">1</span> review)</span></a>
+</div>
+<dl>
+<dt>SKU</dt>
+<dd itemprop="sku"><b>J8SE01OR</b></dd>
+<dt>Berat Pengiriman</dt>
+<dd>2.5 kg</dd>
+<dt>Garansi</dt>
+<dd>No Warranty</dd>
+</dl>
+</div><div class="detailPrice">
+<span class="button button--disabled">Produk tidak dijual lagi</span>
+<br />
+<a href="https://www.jakartanotebook.com/olahraga-lainnya" class="link">Lihat koleksi Olahraga Lainnya lainnya di sini</a>
+</div>
+<meta itemprop="mpn" content="J8SE01OR" />
+<meta itemprop="description" content="REGAIL Raket badminton ini memiliki bobot ringan nan kuat serta net dengan daya pegas yang kuat. Hal ini membuat Anda dapat melakukan pukulan smash yang begitu sempurna dengan mudah. " />
+<div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+<meta itemprop="name" content="REGAIL" />
+</div>
+</section>
+
+<div class="detailSlogan">
+<div class="sloganLeft"></div>
+<ul>
+<li class="isDiscount">
+<i class="ir"></i>
+<div class="desc">
+<h4>SUPER DISCOUNTS</h4>
+<p>
+Nikmati belanja murah ditambah diskon spesial
+</p>
+</div>
+</li><li class="isShipping">
+<i class="ir"></i>
+<div class="desc">
+<h4>1-DAY SHIPPING</h4>
+<p>
+Pesanan diproses sesaat setelah pembayaran lunas
+</p>
+</div>
+</li><li class="isProduct">
+<i class="ir"></i>
+<div class="desc">
+<h4>TOP PRODUCTS</h4>
+<p>
+Semua barang kami terjamin mutu dan kualitasnya
+</p>
+</div>
+</li><li class="isPrice">
+<i class="ir"></i>
+<div class="desc">
+<h4>LOWEST PRICE</h4>
+<p>
+Kami selalu memberikan harga terbaik tanpa mengurangi mutu
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+
+<div class="bar__wrapper">
+<div class="mainBar">
+
+<section class="detailSection">
+<div class="box detailBox">
+<div class="boxHeader">
+<h2>People also Bought</h2>
+<a target="_blank" href="https://www.jakartanotebook.com/related-products/OMCL2OBK" class="button button--cta" style="margin-right: 0;">View more</a>
+</div>
+<div class="boxContent">
+<ul class="detailProductList">
+<li>
+<a href="https://www.jakartanotebook.com/regail-kok-badminton-plastic-shuttlecock-6-pcs-white">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/80/868/36151/3/279/regail-kok-badminton-6-pcs-white-1.jpg" alt="REGAIL Kok Badminton Plastic Shuttlecock 6 PCS - White"></div>
+<h3>REGAIL Kok Badminton Plastic Shuttlecock&#8230;</h3>
+<div class="price">Rp. 60.900,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/taffpack-lakban-khusus-anti-bocor-flex-tape-anti-leak-10-x-152-cm-51db-black">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/75/1020/40468/2/279/lakban-khusus-anti-bocor-flex-tape-10-x-152-cm-51db-black-1.jpg" alt="TaffPACK Lakban Khusus Anti Bocor Flex Tape Anti Leak 10 x 152 cm - 51DB - Black"></div>
+<h3>TaffPACK Lakban Khusus Anti Bocor Flex Tape&#8230;</h3>
+<div class="price">Rp. 14.100,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/enelong-baterai-cas-ni-mh-aa-2100mah-4pcs-hr6-or-mn1500-white">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/13/262/7456/3/279/enelong-rechargeable-aa-hr6-or-mn1500-ni-mh-batteries-2100mah-4-pcs-white-1.jpg" alt="Enelong Baterai Cas Ni-Mh AA 2100mAh 4 PCS - HR6 / MN1500 - White"></div>
+<h3>Enelong Baterai Cas Ni-Mh AA 2100mAh 4 PCS&#8230;</h3>
+<div class="price">Rp. 52.900,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/taffware-kabel-adapter-hdmi-ke-vga-female-hd008-black">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/33/9/5246/2/279/hdmi-to-vga-adapter-hd008-black-2.jpg" alt="Taffware Kabel Adapter HDMI ke VGA Female - HD008 - Black"></div>
+<h3>Taffware Kabel Adapter HDMI ke VGA Female&#8230;</h3>
+<div class="price">Rp. 26.400,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/xiaomi-mi-piston-huosai-earphone-replika-1;1-rose-gold">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/42/252/8714/178/279/xiaomi-mi-piston-earphone-oem-rose-gold-1.jpg" alt="Xiaomi Mi Piston Huosai Earphone (Replika 1:1) - Rose Gold"></div>
+<h3>Xiaomi Mi Piston Huosai Earphone (Replika&#8230;</h3>
+<div class="price">Rp. 26.900,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/pengusir-hama-ultrasonic-li-3110-black">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/72/63/8783/2/279/ultrasonic-electromagnetic-rat-pest-control-repeller-black-16.jpg" alt="Pengusir Hama Ultrasonic - LI-3110 - Black"></div>
+<h3>Pengusir Hama Ultrasonic - LI-3110 - Black</h3>
+<div class="price">Rp. 32.100,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/romoss-sense-6-power-bank-20000mah-replika-11-white">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/92/327/10279/3/279/romoss-sense-6-power-bank-20000-mah-white-1.jpg" alt="Romoss Sense 6 Power Bank 20000mAh (Replika 1:1) - White"></div>
+<h3>Romoss Sense 6 Power Bank 20000mAh (Replika&#8230;</h3>
+<div class="price">Rp. 144.000,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/hdmi-splitter-gold-plated-0.3m-2-port-female-xh1023-black">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/39/63/11629/2/279/hdmi-splitter-adapter-y-female-to-male-gold-plated-03m-black-2.jpg" alt="HDMI Splitter Gold Plated 0.3m 2 Port Female - XH1023 - Black"></div>
+<h3>HDMI Splitter Gold Plated 0.3m 2 Port Female&#8230;</h3>
+<div class="price">Rp. 19.900,-</div>
+</a>
+</li> </ul>
+</div>
+</div>
+ </section>
+<section class="detailSection">
+<div class="box detailBox">
+<div class="boxHeader">
+<h2>Overview of REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019</h2>
+</div>
+<div class="boxContent mce">
+<p>REGAIL Raket badminton ini memiliki bobot ringan nan kuat serta net dengan daya pegas yang kuat. Hal ini membuat Anda dapat melakukan pukulan smash yang begitu sempurna dengan mudah.&nbsp;</p>
+<div class="h2">Features</div>
+<table class="stdTable noBorder">
+<tbody>
+<tr>
+<td>
+<div class="h3" style="text-align:left">High Quality Net</div>
+<p>Racket ini tahu cara membuat Anda dapat smash dengan kuat tanpa perlu tenaga yang besar, daya pegas net raket ini sangat baik, membimbing Anda untuk menjadi pemain badminton profesional. Tenaga yang tidak kalah dari pesaingnya seperti yonex, adidas, Li ning, Ashaway, dll.</p>
+</td>
+</tr>
+<tr>
+<td>
+<div class="h3" style="text-align:left">Lightweight Racket for Stamina</div>
+<p>Raket badminton yang ringan dapat memperkuat pukulan smash pada kok / shuttlecock, salah satu cara terbaik untuk menghemat tenaga / stamina ketika bertanding adalah menggunakan raket yang ringan namun bertenaga kuat.</p>
+</td>
+</tr>
+<tr>
+<td>
+<div class="h3" style="text-align:left">1 Set Racket</div>
+<p>Anda akan mendapatkan couple racket, sehingga Anda dapat bermain dengan orang lain ketika tidak membawa raket.</p>
+</td>
+</tr>
+<tr>
+<td>
+<div class="h3" style="text-align:left">Racket Bag</div>
+<p>Racket ini juga sudah dilengkapi dengan tas selempang raket yang mampu menampung 2 buah raket, sehingga Anda tidak perlu menenteng raket ketika pergi ke lapangan badminton dan mencegah net yang lecet atau tergores ketika berjalan.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="h2">Package Content</div>
+<p>Barang-Barang yang Anda dapatkan dari dalam kotak produk:</p>
+<ul>
+<li>2 x Raket Badminton</li>
+<li>1 x Tas Raket</li>
+</ul>
+<p>Video YouTube dibawah hanyalah ilustrasi fungsi dan penggunaan produk. Kami tidak menjamin barang kami 100% mirip dengan produk dalam video YouTube tersebut.</p>
+</div>
+</div>
+</section>
+<section class="detailSection">
+<div class="box detailBox">
+<div class="boxHeader">
+<h2>Photos of REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019</h2>
+</div>
+<div class="boxContent center pdp__desc__gallery">
+<img src="https://www.jakartanotebook.com/images/products/80/868/36146/10/279/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-1.jpg" alt="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 1" style="margin: 15px">
+<img src="https://www.jakartanotebook.com/images/products/80/868/36146/10/279/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-2.jpg" alt="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 2" style="margin: 15px">
+<img src="https://www.jakartanotebook.com/images/products/80/868/36146/10/279/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-3.jpg" alt="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 3" style="margin: 15px">
+<img src="https://www.jakartanotebook.com/images/products/80/868/36146/10/279/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-4.jpg" alt="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 4" style="margin: 15px">
+<img src="https://www.jakartanotebook.com/images/products/80/868/36146/10/279/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-5.jpg" alt="REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019 - Orange - 5" style="margin: 15px">
+</div>
+</div>
+</section>
+<section class="detailSection">
+<div class="box detailBox">
+<div class="boxHeader">
+<h2>Video of REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019</h2>
+</div>
+<div class="boxContent mce">
+<div class="responsiveVideo"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/W5X-wrchdwk"></iframe></div>
+</div>
+</div>
+</section>
+
+<section class="detailSection techSpec">
+<div class="box detailBox">
+<div class="boxHeader">
+<h2>Technical Specifications of REGAIL Raket Badminton Carbon Fiber 2 PCS - 8019</h2>
+</div>
+<div class="boxContent">
+<table class="stdTable">
+<tr>
+<td>Others</td>
+<td>Material: Carbon Fiber</td>
+</tr>
+</table>
+</div>
+</div>
+</section>
+
+<section class="detailSection" id="customer-reviews">
+<div class="box detailBox">
+<div class="boxHeader">
+<h2>Customer Reviews</h2>
+<a href="https://www.jakartanotebook.com/member/?_r=regail-raket-badminton-carbon-fiber-2-pcs-8019-orange" class="button button--cta  inactive">Login to review</a>
+</div>
+<div class="boxContent">
+
+<ul class="detailReview" itemprop="review" itemtype="http://schema.org/Review" itemscope>
+<li>
+<div class="reviewHeader" itemprop="author" itemtype="http://schema.org/Person" itemscope>
+<h3>REGAIL Raket Badminton Carbon Fiber</h3>
+<div class="productRating"><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i><i class="ir"></i></div>
+<span class="reviewBy" itemprop="name" content="Bambang Putranto">by <b>Bambang Putranto</b></span>
+<span class="reviewDate">on <b>Aug 29th 2019</b></span>
+</div><div class="reviewContent">
+Pengiriman sangat cepat, packing sangat rapi, dapet tasnya. trims </div>
+<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
+<meta itemprop="worstRating" content="0" />
+<meta itemprop="ratingValue" content="5" />
+<meta itemprop="bestRating" content="5" />
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div><div class="sideBar right box">
+<div class="sideBanner">
+<a href="https://www.jakartanotebook.com/cash-on-delivery?utm_source=home&utm_medium=detail-product&utm_content=cash-on-delivery&utm_campaign=cash-on-delivery-20180123&jtm_s=home&jtm_m=detail-product&jtm_d=cash-on-delivery&jtm_c=cash-on-delivery-20180123">
+<img src="https://www.jakartanotebook.com/images/new/cod.jpg" alt="Cash on Delivery">
+</a>
+</div>
+
+<h3>Related Items</h3>
+<ul class="relatedItems">
+<li>
+<a href="https://www.jakartanotebook.com/kacamata-motor-motocross-ski-goggles-eye-protection-windproof-h013-black">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/80/1020/39696/2/279/kacamata-motor-motocross-ski-goggles-eye-protection-windproof-h013-black-1.jpg" alt="Kacamata Motor Motocross Ski Goggles Eye Protection Windproof - H013 - Black"></div>
+<h4>Kacamata Motor Motocross Ski Goggles Eye&#8230;</h4>
+<div class="price">Rp. 53.200,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/caliper-release-aid-trigger-anak-panah-265smw-black">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/80/1020/39982/2/279/caliper-release-aid-trigger-anak-panah-265smw-black-1.jpg" alt="Caliper Release Aid Trigger Anak Panah - 265SMW - Black"></div>
+<h4>Caliper Release Aid Trigger Anak Panah -&#8230;</h4>
+<div class="price">Rp. 99.900,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/fdbro-sport-mask-3-masker-olahraga-elevation-training-fitness-workout-running-cardio-size-m-fd3-black">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/80/1152/41559/2/279/fdbro-sport-mask-3-masker-olahraga-elevation-training-fitness-workout-running-cardio-size-m-fd3-black-12344.jpg" alt="FDBRO Sport Mask 3 Masker Olahraga Elevation Training Fitness Workout Running Cardio Size M - FD3 - Black"></div>
+<h4>FDBRO Sport Mask 3 Masker Olahraga Elevation&#8230;</h4>
+<div class="price">Rp. 376.000,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/nordson-kacamata-goggles-classic-vintage-harley-uv-protection-nd1008-transparent">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/80/1196/42784/34/279/nordson-kacamata-goggles-classic-vintage-harley-uv-protection-nd1008-transparent-1.jpg" alt="Nordson Kacamata Goggles Classic Vintage Harley UV Protection - ND1008 - Transparent"></div>
+<h4>Nordson Kacamata Goggles Classic Vintage&#8230;</h4>
+<div class="price">Rp. 42.100,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/wosport-kepala-anak-panah-tombak-hunting-arrowhead-archery-17446-black">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/80/1020/43321/2/279/wosport-kepala-anak-panah-tombak-hunting-arrowhead-multifungsi-17446-black-1.jpg" alt="WoSport Kepala Anak Panah Tombak Hunting Arrowhead Archery - 17446 - Black"></div>
+<h4>WoSport Kepala Anak Panah Tombak Hunting&#8230;</h4>
+<div class="price">Rp. 8.800,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/phmax-kacamata-goggles-ski-ice-skating-double-layers-uv400-a4-a5-black">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/80/63/43753/2/279/phmax-kacamata-goggles-ski-ice-skating-double-layers-uv400-a4-a5-black-10.jpg" alt="PHMAX Kacamata Goggles Ski Ice Skating Double Layers UV400 - A4 A5 - Black"></div>
+<h4>PHMAX Kacamata Goggles Ski Ice Skating Double&#8230;</h4>
+<div class="price">Rp. 66.500,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/herorrider-kacamata-goggles-classic-vintage-harley-uv-protection-812-black">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/80/1020/43806/2/279/herorrider-kacamata-goggles-classic-vintage-harley-uv-protection-foldable-812-black-28.jpg" alt="Herorrider Kacamata Goggles Classic Vintage Harley UV Protection - 812 - Black"></div>
+<h4>Herorrider Kacamata Goggles Classic Vintage&#8230;</h4>
+<div class="price">Rp. 102.300,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/taffsport-bollfo-kacamata-goggles-mask-motor-retro-anti-glare-windproof-wide-mt-01-black-or-blue">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/80/63/44075/138/279/taffsport-bollfo-kacamata-goggles-mask-motor-retro-anti-glare-windproof-wide-mt-01-black-or-blue-1.jpg" alt="TaffSPORT BOLLFO Kacamata Goggles Mask Motor Retro Anti Glare Windproof WIDE - MT-01 - Black/Blue"></div>
+<h4>TaffSPORT BOLLFO Kacamata Goggles Mask Motor&#8230;</h4>
+<div class="price">Rp. 39.900,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/yavck-raket-tenis-carbon-aluminium-alloy-1-pcs-5600-white">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/80/1217/44120/3/279/yavck-raket-tenis-carbon-aluminium-alloy-1-pcs-5600-white-49.jpg" alt="YAVCK Raket Tenis Carbon Aluminium Alloy - 5600 - White"></div>
+<h4>YAVCK Raket Tenis Carbon Aluminium Alloy&#8230;</h4>
+<div class="price">Rp. 150.300,-</div>
+</a>
+</li><li>
+<a href="https://www.jakartanotebook.com/taffsport-bollfo-kacamata-goggles-mask-motor-retro-anti-glare-windproof-mt-01-obral-retak-black-or-brown">
+<div class="img"><img src="https://www.jakartanotebook.com/images/products/80/1171/44206/202/279/taffsport-bollfo-kacamata-goggles-mask-motor-retro-anti-glare-windproof-mt-01-obral-retak-black-or-brown-1.jpg" alt="TaffSPORT BOLLFO Kacamata Goggles Mask Motor Retro Anti Glare Windproof - MT-01 (OBRAL RETAK HALUS) - Black/Brown"></div>
+<h4>TaffSPORT BOLLFO Kacamata Goggles Mask Motor&#8230;</h4>
+<div class="price">Rp. 17.900,-</div>
+</a>
+</li> </ul>
+</div>
+
+</div>
+</a>
+</div>
+
+<div class="mfp-hide white-popup-block" id="popup-remind">
+<h1>Remind Me when Item is Ready</h1>
+<form action="https://www.jakartanotebook.com/products/submitEmailMe" method="POST" id="popup-remind-form" class="form stdForm pad" style="line-height: 24px;padding-top:0px;">
+<h2 id="popup-remind-product-name"></h2>
+<label for="email">akan kami emailkan ke :</label>
+<input type="text" name="newEmail" id="popup-remind-email" placeholder="sample@domain.com" value="">
+<input type="hidden" name="id" />
+<label for="place">apabila produk sudah ready di :</label>
+<br>
+<input type="checkbox" name="branch[]" style="width: auto; margin: 0 10px" value="2"><label for="">Online / COD</label><br />
+<input type="checkbox" name="branch[]" style="width: auto; margin: 0 10px" value="1"><label for="">Jakarta</label><br />
+<input type="checkbox" name="branch[]" style="width: auto; margin: 0 10px" value="3"><label for="">Semarang</label><br />
+<input type="checkbox" name="branch[]" style="width: auto; margin: 0 10px" value="5"><label for="">Surabaya Timur</label><br />
+<input type="checkbox" name="branch[]" style="width: auto; margin: 0 10px" value="8"><label for="">Surabaya Barat</label><br />
+<input type="checkbox" name="branch[]" style="width: auto; margin: 0 10px" value="6"><label for="">Bandung</label><br />
+<input type="checkbox" name="branch[]" style="width: auto; margin: 0 10px" value="7"><label for="">Tangerang</label><br />
+<input type="checkbox" name="branch[]" style="width: auto; margin: 0 10px" value="9"><label for="">Medan</label><br />
+<br>
+<div class="notif"></div>
+<button class="button ajaxload button--cta" type="submit" id="popup-remind-submit-btn">Remind Me!</button>
+</div>
+</form>
+</div>
+<div class="baloon purple">
+<div class="baloon-ico">
+<i class="ir ico-toa"></i>
+</div>
+<div class="baloon-desc">
+<span>3</span>
+Pengunjung sedang melihat Produk ini
+</div>
+</div>
+
+<footer>
+<div class="footer__top">
+<div class="container">
+<div class="footer__subscribe">
+<div class="footer__subscribe__text">
+<h4>Dapatkan Promo Menarik!</h4>
+<p>
+No spam, weekly, unsubscribe kapan saja
+</p>
+</div>
+<form method="post" id="form-subscribe-newsletter" onsubmit="return ssp()">
+<input class="input" id="footer-subscribe-input" name="email" type="text" placeholder="someone@gmail.com" />
+<button type="submit" id="footer-subscribe-button" class="button button--cta" onclick="amplitude.getInstance().logEvent('footer_submit_subscribe');">Submit</button>
+<a href="#popup-subscribe" id="footer-subscribe-a" onclick="return subscribe()"></a>
+</form>
+</div>
+<div class="footer__sm" style="margin:auto;">
+<ul>
+<li>
+<a href="https://www.facebook.com/jakartanotebook" class="footer--facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+</li>
+<li>
+<a href="https://twitter.com/jakartanotebook" class="footer--twitter"><i class="fa fa-twitter"></i></a>
+</li>
+<li>
+<a href="https://www.instagram.com/jakartanotebook/" class="footer--instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+</li>
+</ul>
+</div>
+<div class="footer__app">
+<a target="_blank" href="https://apps.apple.com/id/app/jakarta-notebook/id1436251412"><img src="https://www.jakartanotebook.com/images/new/footer-ios.png" alt=""></a>
+<a target="_blank" href="https://play.google.com/store/apps/details?id=com.jaknot"><img src="https://www.jakartanotebook.com/images/new/footer-play.png" alt=""></a>
+</div>
+</div>
+</div>
+<div class="footer__mid">
+<div class="container">
+ <div class="footer__col footer__link">
+<h4>Bantuan</h4>
+<ul>
+<li><a href="https://www.jakartanotebook.com/member/forgot_password" title="Get Back Your Account Password">Forgot Password</a></li>
+<li><a href="https://www.jakartanotebook.com/help" title="Help Center">Help</a></li>
+<li><a href="https://www.jakartanotebook.com/service-center" title="Service Center">Service Center</a></li>
+<li><a href="https://www.jakartanotebook.com/help/warranty" title="Warranty">Warranty</a></li>
+<li><a href="https://www.jakartanotebook.com/help/transaction" title="Learn How to Buy here">How to Buy</a></li>
+<li><a href="https://www.jakartanotebook.com/shipping" title="Shipping Cost to All Indonesia Region">Shipping Cost</a></li>
+<li><a href="https://www.jakartanotebook.com/index-product?utm_source=footer-jaknot&utm_medium=footer-index-product&utm_content=page-khusus&utm_campaign=footer-index-product-20140522&jtm_v=footer-jaknot&jtm_c=footer-index-product-20140522" title="Product Index List">Index Product</a></li>
+</ul>
+</div><div class="footer__col footer__link">
+<h4>My Account</h4>
+<ul>
+<li><a href="https://www.jakartanotebook.com/member" title="Be Our Member">Login / Register</a></li>
+<li><a href="https://www.jakartanotebook.com/transaction/cart" title="Your Shopping Cart">My Cart</a></li>
+<li><a href="https://www.jakartanotebook.com/member/purchase_history" title="View Your Order Status">Order Status</a></li>
+<li><a href="https://www.jakartanotebook.com/tracking" title="Track Your Recent Order">Track your Order</a></li>
+<li><a href="https://www.jakartanotebook.com/transaction/confirmation" title="Confirm Your Payment">Payment Confirmation</a></li>
+</ul>
+</div><div class="footer__col footer__link">
+<h4>Make Money</h4>
+<ul>
+<li><a href="https://www.jakartanotebook.com/opportunity/job" title="Career with Us">Job Opportunity</a></li>
+<li><a href="https://www.jakartanotebook.com/member/wish_list" title="Wishlist">Wishlist</a></li>
+<li><a href="https://www.jakmall.com/affiliate" target="_blank" title="Affiliate">Dropshipper (Affiliate)</a></li>
+<li><a href="https://www.jakmall.com/store" target="_blank" title="Selling online">Selling Online</a></li>
+<li>
+<a href="https://www.jakartanotebook.com/mitra-jaknot" target="_blank" title="Selling online">
+<b>MITRA Jaknot</b>
+&nbsp;&nbsp;
+<img src="https://www.jakartanotebook.com/images/new/tag-new.png?1" width="24" alt="">
+</a>
+</li>
+</ul>
+</div><div class="footer__col footer__link">
+<h4>Tentang Kami</h4>
+<ul>
+<li><a href="https://www.jakartanotebook.com/about" title="About Us">About Us</a></li>
+<li><a href="https://www.jakartanotebook.com/contact" title="How to Reach Us">Contact Us</a></li>
+<li><a href="https://www.jakartanotebook.com/blog" title="Our News" target="_blank">Blog</a></li>
+</ul>
+ </div><div class="footer__col footer__address">
+<h4>
+Toko Kami
+<select id="footer_branch" onclick="amplitude.getInstance().logEvent('footer_change_branch');">
+<option value="lejRej" selected="selected">Jakarta</option>
+<option value="nel5aK">Semarang</option>
+<option value="penRe7">Surabaya Timur</option>
+<option value="zbq2dp">Surabaya Barat</option>
+<option value="xbojag">Bandung</option>
+<option value="mep2bM">Tangerang</option>
+<option value="YerEdO">Medan</option>
+</select>
+</h4>
+<p id="branch-container-lejRej">
+<meta itemprop="name" content="JakartaNotebook.com" />
+<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">Ruko Garden Shopping Arcade No. 8EK<br />Podomoro City - Central Park<br />Jl. Letjen S. Parman Kav. 28<br /></span>
+<span itemprop="addressLocality">Grogol - Petamburan<br /></span>
+<span itemprop="addressRegion">Jakarta Barat<br /></span>
+<span itemprop="postalCode">11470<br /></span>
+<meta itemprop="addressCountry" content="ID" />
+</span> <a href="https://www.google.com/maps/place/JakartaNotebook.com/@-6.1770609,106.7875165,17z/data=!3m1!4b1!4m2!3m1!1s0x2e69f65f5dacf24b:0x414e98da5edf84e4?hl=en" target="_blank"><i class="fa fa-map-marker"></i><span>Lihat di Google Maps</span>
+</a> <br /><br /> <span itemprop="contactPoint" itemscope itemtype="http://schema.org/contactPoint">
+<meta itemprop="contactType" content="Sales" />Telp : <span itemprop="telephone">(021) 5698 5511</span><br /><meta itemprop="contactType" content="Sales" />Call (WhatsApp) : 0898 1200 100<br /><meta itemprop="contactType" content="Sales" />COD (WhatsApp) : 0899 557 9090<br /><meta itemprop="contactType" content="Sales" />E-Mail : <a href="/cdn-cgi/l/email-protection#0370626f667043696268627177626d6c7766616c6c682d606c6e" itemprop="email"><span class="__cf_email__" data-cfemail="2e5d4f424b5d6e444f454f5c5a4f40415a4b4c414145004d4143">[email&#160;protected]</span></a><br /></span>
+<br />
+<b style="color: #FFD92A">Jam buka hari biasa:</b>
+<br />
+<meta itemprop="openingHours" content="Mo-Sa 09:00 - 20:00" />Senin - Sabtu : 09:00 - 20:00 <br />
+<meta itemprop="openingHours" content="Su 12:00 - 20:00" />Minggu : 12:00 - 20:00 <br />
+<br />
+<b style="color: #FFD92A">Jam buka hari besar: </b><br />
+Senin - Minggu : 12:00 - 20:00<br />
+<meta itemprop="paymentAccepted" content="Cash,Credit Card,Debit Card,BCA,Mandiri,BNI,CIMB Niaga" />
+</p>
+<p id="branch-container-nel5aK" style="display:none">
+<meta itemprop="name" content="JakartaNotebook.com" />
+<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">Jl. Sriwijaya no. 96-98<br /></span>
+<span itemprop="addressRegion">Semarang Selatan<br /></span>
+<span itemprop="postalCode">50242<br /></span>
+<meta itemprop="addressCountry" content="ID" />
+</span> <a href="https://maps.google.co.id/maps?expflags=enable_star_based_justifications:true&ie=UTF8&cid=3092298228181526833&q=JakartaNotebook.com&iwloc=A&gl=ID&hl=en" target="_blank"><i class="fa fa-map-marker"></i><span>Lihat di Google Maps</span>
+</a> <br /><br /> <span itemprop="contactPoint" itemscope itemtype="http://schema.org/contactPoint">
+<meta itemprop="contactType" content="Sales" />Telp : <span itemprop="telephone">(024) 8314 663</span><br /><meta itemprop="contactType" content="Sales" />BBM : 5240 45D8<br /><meta itemprop="contactType" content="Sales" />HP / Whatsapp / LINE : 0895 1008 1191<br /><meta itemprop="contactType" content="Sales" />E-Mail : <a href="/cdn-cgi/l/email-protection#97e4f2faf6e5f6f9f0d7fdf6fcf6e5e3f6f9f8e3f2f5f8f8fcb9f4f8fa" itemprop="email"><span class="__cf_email__" data-cfemail="c0b3a5ada1b2a1aea780aaa1aba1b2b4a1aeafb4a5a2afafabeea3afad">[email&#160;protected]</span></a><br /></span>
+<br />
+<b style="color: #FFD92A">Jam buka hari biasa:</b>
+<br />
+<meta itemprop="openingHours" content="Mo-Fr 09:00 - 19:00" />Senin - Jumat : 09:00 - 19:00 <br />
+<meta itemprop="openingHours" content="Sa 09:00 - 17:00" />Sabtu : 09:00 - 17:00 <br />
+<meta itemprop="openingHours" content="Su 09:00 - 16:00" />Minggu : 09:00 - 16:00 <br />
+Hari Besar : Libur<br /> </p>
+<p id="branch-container-penRe7" style="display:none">
+<meta itemprop="name" content="JakartaNotebook.com" />
+<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">Ruko Sandiego mainstreet MR 2 No. 6 (79)<br /></span>
+<span itemprop="addressLocality">Pakuwon City Laguna Indah<br /></span>
+<span itemprop="addressRegion">Surabaya Timur<br /></span>
+<span itemprop="postalCode">60112<br /></span>
+<meta itemprop="addressCountry" content="ID" />
+</span> <a href="https://maps.google.com/maps?q=JakartaNotebook.com&hl=en&ll=-7.269343,112.807274&spn=0.009653,0.016512&cid=2990721343095452121&gl=US&t=m&z=17" target="_blank"><i class="fa fa-map-marker"></i><span>Lihat di Google Maps</span>
+</a> <br /><br /> <span itemprop="contactPoint" itemscope itemtype="http://schema.org/contactPoint">
+<meta itemprop="contactType" content="Sales" />Telp : <span itemprop="telephone">(031) 5950 150</span><br /><meta itemprop="contactType" content="Sales" />HP / Whatsapp : 0889 330 6588<br /><meta itemprop="contactType" content="Sales" />BBM : 5A51 4B35<br /><meta itemprop="contactType" content="Sales" />E-Mail : <a href="/cdn-cgi/l/email-protection#384b4d4a595a59415978525953594a4c5956574c5d5a575753165b5755" itemprop="email"><span class="__cf_email__" data-cfemail="9feceaedfefdfee6fedff5fef4feedebfef1f0ebfafdf0f0f4b1fcf0f2">[email&#160;protected]</span></a><br /></span>
+<br />
+<b style="color: #FFD92A">Jam buka hari biasa:</b>
+<br />
+<meta itemprop="openingHours" content="Mo-Fr 09:00 - 20:00" />Senin - Jumat : 09:00 - 20:00 <br />
+<meta itemprop="openingHours" content="Sa-Sun 09:00 - 16:00" />Sabtu - Minggu : 09:00 - 16:00 <br />
+Hari Besar : Libur<br /> </p>
+<p id="branch-container-zbq2dp" style="display:none">
+<meta itemprop="name" content="JakartaNotebook.com" />
+<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">Ruko Puncak Bukit Golf Block RAP<br />Jalan Pradah Jaya I<br /></span>
+<span itemprop="addressLocality">Pradah Kali Kendal<br /></span>
+<span itemprop="addressRegion">Surabaya Barat<br /></span>
+<span itemprop="postalCode">60226<br /></span>
+<meta itemprop="addressCountry" content="ID" />
+</span> <a href="https://goo.gl/maps/iRzfmTN9myQ2" target="_blank"><i class="fa fa-map-marker"></i><span>Lihat di Google Maps</span>
+</a> <br /><br /> <span itemprop="contactPoint" itemscope itemtype="http://schema.org/contactPoint">
+<meta itemprop="contactType" content="Sales" />Telp : <span itemprop="telephone">(031) 9914 9510</span><br /><meta itemprop="contactType" content="Sales" />HP / Whatsapp : 0813 3294 8286<br /><meta itemprop="contactType" content="Sales" />E-Mail : <a href="/cdn-cgi/l/email-protection#562523243734372f37163c373d37242237383922333439393d7835393b" itemprop="email"><span class="__cf_email__" data-cfemail="becdcbccdfdcdfc7dffed4dfd5dfcccadfd0d1cadbdcd1d1d590ddd1d3">[email&#160;protected]</span></a><br /></span>
+<br />
+<b style="color: #FFD92A">Jam buka hari biasa:</b>
+<br />
+<meta itemprop="openingHours" content="Mo-Fr 09:00 - 20:00" />Senin - Jumat : 09:00 - 20:00 <br />
+<meta itemprop="openingHours" content="Sa-Sun 09:00 - 16:00" />Sabtu - Minggu : 09:00 - 16:00 <br />
+Hari Besar : Libur<br /> </p>
+<p id="branch-container-xbojag" style="display:none">
+<meta itemprop="name" content="JakartaNotebook.com" />
+<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">Jl. A Yani no.669<br />Cicadas Gateway Apartment Bandung<br />Ruko blok C2 no.6<br /></span>
+<span itemprop="addressLocality">Kel. Padasuka - Kec. Cibenying kidul<br /></span>
+<span itemprop="addressRegion">Bandung<br /></span>
+<span itemprop="postalCode">40121<br /></span>
+<meta itemprop="addressCountry" content="ID" />
+</span> <a href="https://goo.gl/maps/yjRCGKUbBN52" target="_blank"><i class="fa fa-map-marker"></i><span>Lihat di Google Maps</span>
+</a> <br /><br /> <span itemprop="contactPoint" itemscope itemtype="http://schema.org/contactPoint">
+<meta itemprop="contactType" content="Sales" />Telp / COD : <span itemprop="telephone">(022) 8588 0133</span><br /><meta itemprop="contactType" content="Sales" />HP / Whatsapp : 0812 2467 8044<br /><meta itemprop="contactType" content="Sales" />BBM : 5D923675<br /><meta itemprop="contactType" content="Sales" />Line : cs.jaknotbdg<br /><meta itemprop="contactType" content="Sales" />E-Mail : <a href="/cdn-cgi/l/email-protection#5b393a353f2e353c1b313a303a292f3a35342f3e3934343075383436" itemprop="email"><span class="__cf_email__" data-cfemail="7517141b11001b12351f141e140701141b1a0110171a1a1e5b161a18">[email&#160;protected]</span></a><br /></span>
+<br />
+<b style="color: #FFD92A">Jam buka hari biasa:</b>
+<br />
+<meta itemprop="openingHours" content="Mo-Fr 09:00 - 19:00" />Senin - Jumat : 09:00 - 19:00 <br />
+<meta itemprop="openingHours" content="Sa 09:00 - 17:00" />Sabtu : 09:00 - 17:00 <br />
+<meta itemprop="openingHours" content="Sun 10:00 - 18:00" />Minggu : 10:00 - 18:00 <br />
+<br />
+<b style="color: #FFD92A">Jam buka hari besar: </b><br />
+Senin - Minggu : 10:00 - 18:00<br />
+</p>
+<p id="branch-container-mep2bM" style="display:none">
+<meta itemprop="name" content="JakartaNotebook.com" />
+<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">BSD City<br />Ruko Bidex Blok A no. 23<br />(sebelah Mall Teraskota Serpong)<br /></span>
+<span itemprop="addressLocality">Lengkong Gudang - Serpong<br /></span>
+<span itemprop="addressRegion">Tangerang Selatan<br /></span>
+<span itemprop="postalCode">15310<br /></span>
+<meta itemprop="addressCountry" content="ID" />
+</span> <a href="https://goo.gl/maps/VKyYAoEGngH2" target="_blank"><i class="fa fa-map-marker"></i><span>Lihat di Google Maps</span>
+</a> <br /><br /> <span itemprop="contactPoint" itemscope itemtype="http://schema.org/contactPoint">
+<meta itemprop="contactType" content="Sales" />Sales (Call / WA) : 08 777 60000 43<br /><meta itemprop="contactType" content="Sales" />Customer Service (Call / WA) : 081 22 666 043<br /><meta itemprop="contactType" content="Sales" />E-Mail : <a href="/cdn-cgi/l/email-protection#6410050a030116050a03240e050f051610050a0b1001060b0b0f4a070b09" itemprop="email"><span class="__cf_email__" data-cfemail="97e3f6f9f0f2e5f6f9f0d7fdf6fcf6e5e3f6f9f8e3f2f5f8f8fcb9f4f8fa">[email&#160;protected]</span></a><br /></span>
+<br />
+<b style="color: #FFD92A">Jam buka hari biasa:</b>
+<br />
+ <meta itemprop="openingHours" content="Mo-Fri 10:00 - 20:00" />Senin - Jumat : 10:00 - 20:00 <br />
+<meta itemprop="openingHours" content="Sun 10:00 - 18:00" />Sabtu - Minggu : 10:00 - 18:00 <br />
+Hari Besar : Libur<br /> </p>
+<p id="branch-container-YerEdO" style="display:none">
+<meta itemprop="name" content="JakartaNotebook.com" />
+<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">Jl. Jenggala No. 75<br /></span>
+<span itemprop="addressLocality">Kel. Madras Hulu - Kec. Medan Polonia<br /></span>
+<span itemprop="addressRegion">Kota Medan<br /></span>
+<span itemprop="postalCode">20151<br /></span>
+<meta itemprop="addressCountry" content="ID" />
+</span> <a href="https://goo.gl/maps/SAPMM1Yeza43mrKeA" target="_blank"><i class="fa fa-map-marker"></i><span>Lihat di Google Maps</span>
+</a> <br /><br /> <span itemprop="contactPoint" itemscope itemtype="http://schema.org/contactPoint">
+<meta itemprop="contactType" content="Sales" />HP / Whatsapp : 0895 2425 0506<br /><meta itemprop="contactType" content="Sales" />E-Mail : <a href="/cdn-cgi/l/email-protection#82efe7e6e3ecc2e8e3e9ecedf6ace1edef" itemprop="email"><span class="__cf_email__" data-cfemail="28454d4c49466842494346475c064b4745">[email&#160;protected]</span></a><br /></span>
+<br />
+<b style="color: #FFD92A">Jam buka hari biasa:</b>
+<br />
+<meta itemprop="openingHours" content="Mo-Fr 10:00 - 18:00" />Senin - Jumat : 10:00 - 18:00 <br />
+<meta itemprop="openingHours" content="Sa 10:00 - 16:00" />Sabtu : 10:00 - 16:00 <br />
+Hari Minggu dan Hari besar : Libur<br /> </p>
+<a href="https://www.jakartanotebook.com/contact#store" class="link">View Detail</a>
+</div>
+</div>
+</div>
+<div class="footer__bottom">
+<div class="container">
+<h4>Mitra Pembayaran Kami</h4>
+<ul>
+<li><i class="ir ir-bca"></i></li>
+<li><i class="ir ir-mandiri"></i></li>
+</ul>
+</div>
+</div>
+<div class="footer__copyright">
+Copyright &copy; 2019 JakartaNotebook.com
+<a href="https://www.jakartanotebook.com/terms" class="link">Terms & Conditions</a>
+</div>
+</footer>
+
+<div class="mfp-hide white-popup-block" id="popup-subscribe">
+<div class="popup__title">Daftar Newsletter</div>
+<form action="https://www.jakartanotebook.com/member/submitSubscribe" method="post" id="popup-subscribe-form" class="form stdForm pad">
+<label for="popup-subscribe-input">Email</label>
+<input type="text" name="email" id="popup-subscribe-input" placeholder="someone@gmail.com" />
+<div class="subscribeCaptcha">
+<label>Verifikasi Captcha: (case insensitive)</label>
+<div class="captchaWrapper" id="popup-subscribe-captcha-container"><input type="hidden" value="subscribe_newsletter" /></div><br /><br />
+<div class="notif"></div>
+<button class="button button--cta ajaxload" type="submit" id="popup-subscribe-button">Submit</button>
+</div>
+</form>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="https://www.jakartanotebook.com/js/plugins.js"></script>
+<script type="text/javascript" src="https://www.jakartanotebook.com/js/app/general/ajax.js"></script>
+<script type="text/javascript" src="https://www.jakartanotebook.com/js/front/general.js?20150303"></script>
+<script type="text/javascript" src="https://www.jakartanotebook.com/js/app/front/subscribe.js"></script>
+<script type="text/javascript" src="https://www.jakartanotebook.com/js/app/front/jTippy-trigger-min.js"></script>
+<script type="text/javascript" src="https://www.jakartanotebook.com/js/main-min.js?59"></script>
+
+<script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-27401667-1']);
+                _gaq.push(['_setDomainName', 'jakartanotebook.com']);
+                _gaq.push(['_trackPageview']);
+                                (function() {
+                  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+
+
+<script>
+                (function(h,o,t,j,a,r){
+                    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                    h._hjSettings={hjid:228920,hjsv:6};
+                    a=o.getElementsByTagName('head')[0];
+                    r=o.createElement('script');r.async=1;
+                    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                    a.appendChild(r);
+                })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+            </script>
+
+<script type="text/javascript">
+    window.$zopim || function (t, e) {
+        var n = $zopim = function (t) {
+            n._.push(t)
+        }, s = n.s = t.createElement(e), o = t.getElementsByTagName(e)[0];
+        n.set = function (t) {
+            n.set._.push(t)
+        }, n._ = [], n.set._ = [], s.async = !0, s.setAttribute("charset", "utf-8"), s.src = "https://v2.zopim.com/?5aOpoQo0EX3IrzdDGG9QWyxC0inRYcLS", n.t = +new Date, s.type = "text/javascript", o.parentNode.insertBefore(s, o)
+    }(document, "script");
+</script>
+
+<script type="text/javascript">var thumb_image = ["https:\/\/www.jakartanotebook.com\/images\/products\/80\/868\/36146\/10\/55\/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-1.jpg","https:\/\/www.jakartanotebook.com\/images\/products\/80\/868\/36146\/10\/55\/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-2.jpg","https:\/\/www.jakartanotebook.com\/images\/products\/80\/868\/36146\/10\/55\/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-3.jpg","https:\/\/www.jakartanotebook.com\/images\/products\/80\/868\/36146\/10\/55\/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-4.jpg","https:\/\/www.jakartanotebook.com\/images\/products\/80\/868\/36146\/10\/55\/regail-raket-badminton-carbon-fiber-2-pcs-8019-orange-5.jpg"];</script>
+<script type="text/javascript" src="https://www.jakartanotebook.com/js/app/front/email_me.js?8"></script>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=id"></script>
+<script type="text/javascript" src="https://www.jakartanotebook.com/js/app/front/detail_product.js?2"></script>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4d6468f087","applicationID":"398320207","transactionName":"b1NVNUJQCENRVRJYXVYZYhNZHg9eVFMeH0JQRg==","queueTime":0,"applicationTime":152,"atts":"QxRWQwpKG00=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
